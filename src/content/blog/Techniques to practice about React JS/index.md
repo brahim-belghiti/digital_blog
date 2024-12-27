@@ -2,7 +2,8 @@
 title: "Techniques to practice about React JS"
 description: ""
 date: "Mar 17 2024"
-tags: ["React"]
+tags: ["react-js"]
+url: "techniques-to-practice-about-react-js"
 ---
 
 some of the workflows and best practices.

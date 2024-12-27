@@ -2,7 +2,8 @@
 title: "rules of React JS"
 description: "rules of React JS"
 date: "Mar 20 2024"
-tags: ["React"]
+tags: ["react-js"]
+url: "rules-of-react-js"
 ---
 
 ### React Component Must Return a Single Element 

@@ -2,7 +2,8 @@
 title: "react application architecture"
 description: "react application architecture"
 date: "Dec 19 2024"
-tags: ["React"]
+tags: ["react-js"]
+url: "react-application-architecture"
 ---
 
 React is a library not a framework, so React doesn't impose a structure for your application, how many pattern have been established to build maintainable, scale-able React applications

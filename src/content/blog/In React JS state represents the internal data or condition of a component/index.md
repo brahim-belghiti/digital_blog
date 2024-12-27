@@ -2,7 +2,8 @@
 title: "in React JS state represents the internal data or condition of a component"
 description: "in React JS state represents the internal data or condition of a component"
 date: "Dec 19 2024"
-tags: ["React"]
+tags: ["react-js"]
+url: "in-react-js-state-represents-the-internal-data-or-condition-of-a-component"
 ---
 
 **Definition**: State represents the internal data or condition of a component, which can change over time and directly affects the rendering of the UI. It is used to store information such as user inputs, the index of the current image displayed in a gallery, or the data in a table.

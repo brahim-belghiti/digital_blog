@@ -2,7 +2,8 @@
 title: "Core concepts to understand in React JS"
 description: ""
 date: "Dec 19 2024"
-tags: ["react"]
+tags: ["react-js"]
+url: "core-concepts-to-understand-in-react-js"
 ---
 
 

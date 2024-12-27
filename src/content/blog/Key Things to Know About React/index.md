@@ -2,7 +2,8 @@
 title: "key Things to Know About React"
 description: "key Things to Know About React"
 date: "Mar 21 2024"
-tags: ["React"]
+tags: ["react-js"]
+url: "key-things-to-know-about-react"
 ---
 
 React is a JavaScript library for creating user interfaces (UIs). We refer to it as a **library** because it is not a framework; it does not impose a specific architecture on your application. It is an open-source project developed and maintained by Meta, originally started by Jordan Walke.

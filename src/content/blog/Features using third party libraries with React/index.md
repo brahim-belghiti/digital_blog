@@ -2,7 +2,8 @@
 title: "Features using third party libraries with React"
 description: ""
 date: "Mar 16 2024"
-tags: ["React"]
+tags: ["react-js"]
+url: "features-using-third-party-libraries-with-react"
 ---
 
 ### React Router

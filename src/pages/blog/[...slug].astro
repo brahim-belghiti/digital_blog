@@ -5,6 +5,7 @@ import Container from '@components/Container.astro';
 import FormattedDate from '@components/FormattedDate.astro';
 import { readingTime } from '@lib/utils';
 import BackToPrev from '@components/BackToPrev.astro';
+import Link from '@components/Link.astro';
 
 export async function getStaticPaths() {
   const posts = (await getCollection('blog'))
@@ -42,7 +43,9 @@ const { Content } = await post.render();
     </div>
     <article class="animate">
       <Content />
-      <a href="" class="text-yellow-500 no-underline">#{post.data.tags}</a>
+      <div class="text-yellow-500">
+        {post.data.tags.map((tag) => <Link href={`/tags/${tag}`}>#{tag}</Link>)}
+      </div>
     </article>
   </Container>
 </PageLayout>

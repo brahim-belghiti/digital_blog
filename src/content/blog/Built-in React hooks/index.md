@@ -2,7 +2,8 @@
 title: "Built-in React hooks"
 description: "Built-in React hooks let you use different React features from your components"
 date: "Dec 19 2024"
-tags: ["React"]
+tags: ["react-js"]
+url: "built-in-react-hooks"
 ---
 
 Hooks were introduced in React 16.8 and are functions that let use different React features from your components. They can separated into different categories.

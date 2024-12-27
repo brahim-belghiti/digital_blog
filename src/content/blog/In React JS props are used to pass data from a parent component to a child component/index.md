@@ -2,7 +2,8 @@
 title: "in React JS props are used to pass data from a parent component to a child component"
 description: "in React JS props are used to pass data from a parent component to a child component"
 date: "Dec 19 2024"
-tags: ["React"]
+tags: ["react-js"]
+url: "in-react-js-props-are-used-to-pass-data-from-a-parent-component-to-a-child-component"
 ---
 
 

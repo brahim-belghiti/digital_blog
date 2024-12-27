@@ -2,7 +2,8 @@
 title: "in React JS components are reusable pieces of UI that can be defined as functions"
 description: "in React JS components are reusable pieces of UI that can be defined as functions"
 date: "Dec 19 2024"
-tags: ["React"]
+tags: ["react-js"]
+url: "in-react-js-components-are-reusable-pieces-of-ui-that-can-be-defined-as-functions"
 ---
 
 In React, components are reusable pieces of the UI that can be defined as functions or classes. They return elements that describe what should appear on the screen, often written in JSX (JavaScript XML).

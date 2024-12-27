@@ -1,0 +1,48 @@
+---
+import PageLayout from '@layouts/PageLayout.astro';
+import Link from '@components/Link.astro';
+import Container from '@components/Container.astro';
+
+export async function getStaticPaths() {
+  const allPosts = Object.values(
+    import.meta.glob('../../content/blog/*/*.md', { eager: true })
+  );
+
+  return [
+    { params: { tag: 'react-js' }, props: { posts: allPosts } },
+    { params: { tag: 'javascript' }, props: { posts: allPosts } },
+    { params: { tag: 'typescript' }, props: { posts: allPosts } },
+    { params: { tag: 'express' }, props: { posts: allPosts } },
+  ];
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+
+const filteredPosts = posts.filter((post: any) =>
+  post.frontmatter.tags?.includes(tag)
+);
+---
+
+<PageLayout title={tag} description={tag}>
+  <Container>
+    <div class="space-y-1 my-10 flex flex-col gap-4">
+      <div class="animate font-semibold text-black dark:text-white">
+        <h1 class="text-3xl">Posts tagged with {tag}</h1>
+      </div>
+      <ul class="animate flex flex-col gap-4">
+        {
+          filteredPosts.map((post: any) => (
+            <section class="animate space-y-4">
+              <li>
+                <Link href={`/blog/${post.frontmatter.url}`}>
+                  {post.frontmatter.title}
+                </Link>
+              </li>
+            </section>
+          ))
+        }
+      </ul>
+    </div>
+  </Container>
+</PageLayout>
