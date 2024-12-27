@@ -2,7 +2,7 @@
 title: "Suspense is React feature that allows you to suspend rendering until certain conditions are met"
 description: "Suspense is React feature that allows you to suspend rendering until certain conditions are met, such as data loading or code splitting"
 date: "Dec 19 2024"
-tags: ["react-js", "performance"]
+tags: ["react-js"]
 url: "suspense-is-react-feature-that-allows-you-to-suspend-rendering-until-certain-conditions-are-met"
 ---
 
