@@ -1,7 +1,7 @@
 ---
 title: 'Spa market'
 description: 'SpaMarket Shop - Online Beauty and Care Products'
-date: 'Februrary 28 2024'
+date: 'Februrary 28 2025'
 demoURL: 'https://spamarket.ma/'
 repoURL: ''
 ---
