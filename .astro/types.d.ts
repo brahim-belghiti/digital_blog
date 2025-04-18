@@ -141,105 +141,105 @@ declare module 'astro:content' {
   slug: "built-in-react-hooks";
   body: string;
   collection: "blog";
-  data: InferEntrySchema<"blog">
+  data: any
 } & { render(): Render[".md"] };
 "Core concepts to understand in React JS/index.md": {
 	id: "Core concepts to understand in React JS/index.md";
   slug: "core-concepts-to-understand-in-react-js";
   body: string;
   collection: "blog";
-  data: InferEntrySchema<"blog">
+  data: any
 } & { render(): Render[".md"] };
 "Features using third party libraries with React/index.md": {
 	id: "Features using third party libraries with React/index.md";
   slug: "features-using-third-party-libraries-with-react";
   body: string;
   collection: "blog";
-  data: InferEntrySchema<"blog">
+  data: any
 } & { render(): Render[".md"] };
 "In React JS components are reusable pieces of UI that can be defined as functions/index.md": {
 	id: "In React JS components are reusable pieces of UI that can be defined as functions/index.md";
   slug: "in-react-js-components-are-reusable-pieces-of-ui-that-can-be-defined-as-functions";
   body: string;
   collection: "blog";
-  data: InferEntrySchema<"blog">
+  data: any
 } & { render(): Render[".md"] };
 "In React JS props are used to pass data from a parent component to a child component/index.md": {
 	id: "In React JS props are used to pass data from a parent component to a child component/index.md";
   slug: "in-react-js-props-are-used-to-pass-data-from-a-parent-component-to-a-child-component";
   body: string;
   collection: "blog";
-  data: InferEntrySchema<"blog">
+  data: any
 } & { render(): Render[".md"] };
 "In React JS state represents the internal data or condition of a component/index.md": {
 	id: "In React JS state represents the internal data or condition of a component/index.md";
   slug: "in-react-js-state-represents-the-internal-data-or-condition-of-a-component";
   body: string;
   collection: "blog";
-  data: InferEntrySchema<"blog">
+  data: any
 } & { render(): Render[".md"] };
 "Key Things to Know About React/index.md": {
 	id: "Key Things to Know About React/index.md";
   slug: "key-things-to-know-about-react";
   body: string;
   collection: "blog";
-  data: InferEntrySchema<"blog">
+  data: any
 } & { render(): Render[".md"] };
 "React JS introduction/index.md": {
 	id: "React JS introduction/index.md";
   slug: "react-js-introduction";
   body: string;
   collection: "blog";
-  data: InferEntrySchema<"blog">
+  data: any
 } & { render(): Render[".md"] };
 "React application architecture/index.md": {
 	id: "React application architecture/index.md";
   slug: "react-application-architecture";
   body: string;
   collection: "blog";
-  data: InferEntrySchema<"blog">
+  data: any
 } & { render(): Render[".md"] };
 "React uses a virtual DOM to optimize updates to the actual DOM/index.md": {
 	id: "React uses a virtual DOM to optimize updates to the actual DOM/index.md";
   slug: "react-uses-a-virtual-dom-to-optimize-updates-to-the-actual-dom";
   body: string;
   collection: "blog";
-  data: InferEntrySchema<"blog">
+  data: any
 } & { render(): Render[".md"] };
 "Rules of React JS/index.md": {
 	id: "Rules of React JS/index.md";
   slug: "rules-of-react-js";
   body: string;
   collection: "blog";
-  data: InferEntrySchema<"blog">
+  data: any
 } & { render(): Render[".md"] };
 "Suspense is React feature that allows you to suspend rendering until certain conditions are met/index.md": {
 	id: "Suspense is React feature that allows you to suspend rendering until certain conditions are met/index.md";
   slug: "suspense-is-react-feature-that-allows-you-to-suspend-rendering-until-certain-conditions-are-met";
   body: string;
   collection: "blog";
-  data: InferEntrySchema<"blog">
+  data: any
 } & { render(): Render[".md"] };
 "Techniques to practice about React JS/index.md": {
 	id: "Techniques to practice about React JS/index.md";
   slug: "techniques-to-practice-about-react-js";
   body: string;
   collection: "blog";
-  data: InferEntrySchema<"blog">
+  data: any
 } & { render(): Render[".md"] };
 "client side rendering vs server side rendering/index.md": {
 	id: "client side rendering vs server side rendering/index.md";
   slug: "client-side-rendering-vs-server-side-rendering";
   body: string;
   collection: "blog";
-  data: InferEntrySchema<"blog">
+  data: any
 } & { render(): Render[".md"] };
 "reconciliation is the process by which React determines what has changed in the virtual DOM and updates the actual DOM efficiently/index.md": {
 	id: "reconciliation is the process by which React determines what has changed in the virtual DOM and updates the actual DOM efficiently/index.md";
   slug: "reconciliation-is-the-process-by-which-react-determines-what-has-changed-in-the-virtual-dom-and-updates-the-actual-dom-efficiently";
   body: string;
   collection: "blog";
-  data: InferEntrySchema<"blog">
+  data: any
 } & { render(): Render[".md"] };
 };
 "projects": {
@@ -248,28 +248,35 @@ declare module 'astro:content' {
   slug: "abex-landing-page";
   body: string;
   collection: "projects";
-  data: InferEntrySchema<"projects">
+  data: any
 } & { render(): Render[".md"] };
 "fiamane platform/index.md": {
 	id: "fiamane platform/index.md";
   slug: "fiamane-platform";
   body: string;
   collection: "projects";
-  data: InferEntrySchema<"projects">
+  data: any
 } & { render(): Render[".md"] };
 "fimane landing page/index.md": {
 	id: "fimane landing page/index.md";
   slug: "fimane-landing-page";
   body: string;
   collection: "projects";
-  data: InferEntrySchema<"projects">
+  data: any
 } & { render(): Render[".md"] };
 "mindful-tube/index.md": {
 	id: "mindful-tube/index.md";
   slug: "mindful-tube";
   body: string;
   collection: "projects";
-  data: InferEntrySchema<"projects">
+  data: any
+} & { render(): Render[".md"] };
+"spamarket/index.md": {
+	id: "spamarket/index.md";
+  slug: "spamarket";
+  body: string;
+  collection: "projects";
+  data: any
 } & { render(): Render[".md"] };
 };
 "work": {
@@ -278,28 +285,28 @@ declare module 'astro:content' {
   slug: "apple";
   body: string;
   collection: "work";
-  data: InferEntrySchema<"work">
+  data: any
 } & { render(): Render[".md"] };
 "facebook.md": {
 	id: "facebook.md";
   slug: "facebook";
   body: string;
   collection: "work";
-  data: InferEntrySchema<"work">
+  data: any
 } & { render(): Render[".md"] };
 "google.md": {
 	id: "google.md";
   slug: "google";
   body: string;
   collection: "work";
-  data: InferEntrySchema<"work">
+  data: any
 } & { render(): Render[".md"] };
 "mcdonalds.md": {
 	id: "mcdonalds.md";
   slug: "mcdonalds";
   body: string;
   collection: "work";
-  data: InferEntrySchema<"work">
+  data: any
 } & { render(): Render[".md"] };
 };
 
@@ -311,5 +318,5 @@ declare module 'astro:content' {
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	export type ContentConfig = typeof import("../src/content/config.js");
+	export type ContentConfig = never;
 }
