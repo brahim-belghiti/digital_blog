@@ -250,6 +250,13 @@ declare module 'astro:content' {
   collection: "projects";
   data: any
 } & { render(): Render[".md"] };
+"careerlink/index.md": {
+	id: "careerlink/index.md";
+  slug: "careerlink";
+  body: string;
+  collection: "projects";
+  data: any
+} & { render(): Render[".md"] };
 "fiamane platform/index.md": {
 	id: "fiamane platform/index.md";
   slug: "fiamane-platform";
