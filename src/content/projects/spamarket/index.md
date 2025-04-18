@@ -1,57 +1,63 @@
 ---
-title: 'Spa market'
-description: 'SpaMarket Shop - Online Beauty and Care Products'
-date: 'Februrary 28 2025'
+title: 'SpaMarket - Online Beauty & Care Store'
+description: 'Discover SpaMarket, a modern e-commerce platform for beauty and personal care products, built with Next.js, TailwindCSS, and Shadcn UI.'
+date: '2025-02-28'
 demoURL: 'https://spamarket.ma/'
 repoURL: ''
+image: '/assets/projects/spamarket/home_page_full.png'
+tags: ['e-commerce', 'Next.js', 'TailwindCSS', 'frontend', 'Shadcn UI']
 ---
 
-### What is?
+# SpaMarket
 
-SpaMarket is an e-commerce platform dedicated to offering a wide selection of beauty and personal care products. As the frontend developer, I was responsible for designing and developing the user interface, ensuring the website is both visually appealing and highly functional.
+SpaMarket is a sleek and performant e-commerce platform designed to provide a seamless shopping experience for beauty and personal care products. As the frontend developer, I crafted a responsive, user-friendly interface that balances aesthetics with functionality, leveraging modern web technologies to ensure speed, scalability, and accessibility.
 
-The project was built using Next.js (with the App Router) following best practices and the latest Next.js patterns, including Server Components, Server Actions, and Suspense for enhanced performance and maintainability. For state management, I utilized Zustand, and Shadcn UI was incorporated to create a clean, modern, and dynamic user interface. I used TailwindCSS to build a responsive and visually appealing design, ensuring consistency across all devices.
+## 🌟 Project Overview
 
-Key contributions:
+SpaMarket offers a curated selection of beauty and care products, with features like intuitive product discovery, secure checkout, and a responsive design that works flawlessly across devices. Built with Next.js and its latest patterns, the platform prioritizes performance and maintainability while delivering a polished user experience.
 
-Developed the entire frontend using Next.js, leveraging the latest features like Server Components and Server Actions to improve performance and scalability.
+## ✨ Key Features
 
-Implemented dynamic and responsive UI elements with TailwindCSS and Shadcn UI for a modern design and smooth user experience.
+- **Intuitive Navigation**: Smooth and user-friendly browsing experience for easy product discovery.
+- **Secure Payments**: Integrated Stripe for fast and secure checkout.
+- **Responsive Design**: Fully optimized for desktops, tablets, and mobile devices.
+- **Dynamic UI**: Modern, interactive elements powered by Shadcn UI and TailwindCSS.
+- **Fast Performance**: Leverages Next.js Server Components and Suspense for optimal load times.
 
-Managed application state using Zustand, ensuring fast and efficient state management.
+## 🛠️ My Contributions
 
-Integrated Stripe for secure and seamless payment processing.
+As the frontend developer, I was responsible for:
 
-Focused on performance optimization by utilizing techniques like Suspense and ensuring the site was fully responsive and fast across different devices and browsers.
+- Building the entire frontend using **Next.js**, utilizing Server Components, Server Actions, and Suspense for enhanced performance and scalability.
+- Designing a **responsive and modern UI** with TailwindCSS and Shadcn UI, ensuring consistency and accessibility across devices.
+- Implementing efficient **state management** with Zustand for fast and reliable application performance.
+- Integrating **Stripe** for secure payment processing, providing a seamless checkout experience.
+- Optimizing **performance** through techniques like lazy loading, Suspense, and responsive image handling.
+- Collaborating with backend developers to integrate APIs for product data, user authentication, and payment processing.
 
-Collaborated with backend developers to integrate APIs for product data, user authentication, and payment processing.
+The result is a visually appealing, high-performing online store that delivers a delightful shopping experience.
 
-The result is a polished and performant online store that offers a seamless shopping experience with smooth navigation, easy product discovery, and secure checkout, all while adhering to the best practices of modern web development.
+## 🧰 Tech Stack
 
+- **Framework**: Next.js (App Router)
+- **Styling**: TailwindCSS
+- **UI Components**: Shadcn UI
+- **State Management**: Zustand
+- **Form Handling**: React Hook Form
+- **Payments**: Stripe
 
+## 📋 Third-Party Libraries
 
-### screenshots of the app:
+- `zustand`: Lightweight state management for efficient reactivity.
+- `shadcn`: Reusable UI components for a modern, accessible design.
+- `react-hook-form`: Performant form handling with minimal re-renders.
 
-- home page
-![homepage](/assets/projects/spamarket/home_page_full.png)
-- proudct details
-![product_page](/assets/projects/spamarket/product_page_focus.png)
-- adding prouct ot cart
-![product_page_cart](/assets/projects/spamarket/product_page_cart_open.png)
+## 📸 Screenshots
 
+| Homepage | Product Details | Cart Interaction |
+|----------|------------------|------------------|
+| ![SpaMarket Homepage](/assets/projects/spamarket/home_page_full.png "SpaMarket Homepage") | ![Product Details Page](/assets/projects/spamarket/product_page_focus.png "Product Details Page") | ![Adding Product to Cart](/assets/projects/spamarket/product_page_cart_open.png "Adding Product to Cart") |
 
+## 🚀 Explore SpaMarket
 
-### 🧰 Tools
-
- <section class="flex gap-2 items-center justify-center">
-  <img src="/assets/skills/next.png" width="54" height="54" />
-  <img src="/assets/skills/tailwind.png" width="54" height="54" />
-<img src="/assets/skills/typescript.png" width="54" height="54" />
-
-</section  >
-
-### 📋 third party libraries used
-
-- zustand
-- shadcn
-- react-hook-form
+Visit the [live demo](https://spamarket.ma/) to experience SpaMarket firsthand and explore its seamless shopping features!
