@@ -4,7 +4,7 @@ description: 'Discover SpaMarket, a modern e-commerce platform for beauty and pe
 date: '2025-02-28'
 demoURL: 'https://spamarket.ma/'
 repoURL: ''
-image: '/assets/projects/spamarket/home_page_full.png'
+image: '/assets/projects/spamarket/product_page_focus.png'
 tags: ['e-commerce', 'Next.js', 'TailwindCSS', 'frontend', 'Shadcn UI']
 ---
 

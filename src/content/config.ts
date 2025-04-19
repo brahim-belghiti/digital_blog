@@ -32,7 +32,8 @@ const projects = defineCollection({
     demoURL: z.string().optional(),
     repoURL: z.string().optional(),
     image: z.string().optional(),
-  }),
+    tags: z.array(z.string().optional()),
+    }),
 });
 
 export const collections = { blog, work, projects };
