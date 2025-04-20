@@ -1,6 +1,6 @@
 ---
 title: "Core concepts to understand in React JS"
-description: ""
+description: "Explore the essential building blocks of React JS, including components, state, props, and lifecycle methods. This guide is perfect for beginners looking to grasp the core concepts that power modern React applications."
 date: "Dec 19 2024"
 tags: ["react-js"]
 url: "core-concepts-to-understand-in-react-js"
