@@ -2,10 +2,10 @@
 import { type CollectionEntry, getCollection } from 'astro:content';
 import PageLayout from '@layouts/PageLayout.astro';
 import Container from '@components/Container.astro';
-import FormattedDate from '@components/FormattedDate.astro';
+import FormattedDate from '@components/common/FormattedDate.astro';
 import { readingTime } from '@lib/utils';
-import BackToPrev from '@components/BackToPrev.astro';
-import Link from '@components/Link.astro';
+import BackToPrev from '@components/navigation/BackToPrev.astro';
+import Link from '@components/common/Link.astro';
 
 export async function getStaticPaths() {
   const posts = (await getCollection('blog'))
