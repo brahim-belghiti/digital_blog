@@ -1,28 +1,21 @@
 ---
-import Container from "@components/Container.astro";
-import Link from "@components/Link.astro";
+import Container from '@components/Container.astro';
+import Link from '@components/Link.astro';
 ---
 
 <header>
   <Container>
     <div class="flex flex-wrap gap-y-2 justify-between">
-    
       <nav class="flex gap-1">
-          <Link href="/">
-          index
-        </Link>
+        <Link href="/"> index </Link>
         <span>
           {`/`}
         </span>
-        <Link href="/blog">
-          blog
-        </Link>
+        <Link href="/blog"> blog </Link>
         <span>
           {`/`}
         </span>
-          <Link href="/projects">
-          projects
-        </Link>
+        <Link href="/projects"> projects </Link>
       </nav>
       <div class="flex flex-wrap gap-1 items-center">
         <button
