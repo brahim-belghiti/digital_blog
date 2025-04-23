@@ -26,6 +26,13 @@ There are two types of content to handle in a sitemap:
 3. **Map the dynamic content to an array of sitemap entries.**
 4. **Combine both arrays and return them from your `sitemap.ts` function.**
 
+
+## 🙅‍♂️ Skip Protected Routes
+
+You **shouldn’t include protected or authenticated-only routes** (e.g., admin panels, dashboards, or user settings) in your sitemap. These pages require login and aren't meant for indexing by search engines.
+
+---
+
 ### 💡 Code Example
 
 ```ts
