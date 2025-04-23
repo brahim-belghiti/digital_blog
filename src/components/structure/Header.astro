@@ -1,21 +1,30 @@
 ---
 import Container from '@components/Container.astro';
 import Link from '@components/common/Link.astro';
+const { pathname } = Astro.url;
+
+
+const links = [
+  { href: '/', label: 'index' },
+  { href: '/blog', label: 'blog' },
+  { href: '/projects', label: 'projects' },
+];
 ---
 
 <header>
   <Container>
     <div class="flex flex-wrap gap-y-2 justify-between">
       <nav class="flex gap-1">
-        <Link href="/"> index </Link>
-        <span>
-          {`/`}
-        </span>
-        <Link href="/blog"> blog </Link>
-        <span>
-          {`/`}
-        </span>
-        <Link href="/projects"> projects </Link>
+        {links.map(link => (
+          <Link
+            href={link.href}
+            style={`text-sm font-semibold text-black dark:text-white hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-300 ease-in-out ${
+              pathname === link.href ? 'text-orange-400 dark:text-gray-300' : ''
+            }`}
+          >
+            {link.label}
+          </Link>
+        ))}
       </nav>
       <div class="flex flex-wrap gap-1 items-center">
         <button
