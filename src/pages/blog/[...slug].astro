@@ -6,6 +6,7 @@ import FormattedDate from '@components/common/FormattedDate.astro';
 import { readingTime } from '@lib/utils';
 import BackToPrev from '@components/navigation/BackToPrev.astro';
 import Link from '@components/common/Link.astro';
+import RelatedNotes from '@components/blog/related-notes.jsx';
 
 export async function getStaticPaths() {
   const posts = (await getCollection('blog'))
@@ -16,36 +17,45 @@ export async function getStaticPaths() {
     props: post,
   }));
 }
+
 type Props = CollectionEntry<'blog'>;
 
 const post = Astro.props;
 const { Content } = await post.render();
+
+// Fetch related posts based on shared tags
+const allPosts = await getCollection('blog');
+const relatedPosts = allPosts
+  .filter(p => p.body?.includes(post.slug) && p.slug !== post.slug)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  // Limit to 3 related posts
 ---
 
 <PageLayout title={post.data.title} description={post.data.description}>
   <Container>
     <div class="animate">
-      <BackToPrev href="/blog"> Back to blog </BackToPrev>
+      <BackToPrev href="/blog"> Back to notes </BackToPrev>
     </div>
-    <div class="space-y-1 my-10">
-      <div class="animate flex items-center gap-1.5">
-        <div class="font-base text-sm">
-          <FormattedDate date={post.data.date} />
-        </div>
-        &bull;
-        <div class="font-base text-sm">
-          {readingTime(post.body)}
-        </div>
+    <div class="space-y-2 my-10">
+      <div class="animate flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 font-sans">
+        <FormattedDate date={post.data.date} />
+        <span>•</span>
+        <span>{readingTime(post.body)}</span>
       </div>
-      <div class="animate text-2xl font-semibold text-black dark:text-white">
+      <h1 class="animate text-3xl font-semibold text-black dark:text-white font-sans">
         {post.data.title}
-      </div>
+      </h1>
     </div>
-    <article class="animate">
+    <article class="animate prose dark:prose-invert max-w-none font-sans">
       <Content />
-      <div class="text-yellow-500">
-        {post.data.tags.map((tag) => <Link href={`/tags/${tag}`}>#{tag}</Link>)}
+      <div class="mt-6 flex flex-wrap gap-2">
+        {post.data.tags.map((tag) => (
+          <Link href={`/tags/${tag}`} style="inline-block px-3 py-1 text-sm bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
+            #{tag}
+          </Link>
+        ))}
       </div>
     </article>
+    <RelatedNotes client:load posts={relatedPosts} />
   </Container>
 </PageLayout>
