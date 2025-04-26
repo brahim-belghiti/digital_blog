@@ -28,7 +28,7 @@ const allPosts = await getCollection('blog');
 const relatedPosts = allPosts
   .filter(p => p.body?.includes(post.slug) && p.slug !== post.slug)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  // Limit to 3 related posts
+  
 ---
 
 <PageLayout title={post.data.title} description={post.data.description}>
