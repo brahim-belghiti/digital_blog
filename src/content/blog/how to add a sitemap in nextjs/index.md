@@ -2,7 +2,7 @@
 title: "How to generate a dynamic sitemap in Next.js (App router)"
 description: "instructions on how to add a sitemap to a nextjs applicaiton and example"
 date: "Apr 23 2025"
-tags: ["nextjs"]
+tags: ["next-js"]
 url: "how-to-generate-a-dynamic-sitemap-in-Next.js-(app-router)"
 ---
 
