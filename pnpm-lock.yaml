@@ -77,6 +77,10 @@ importers:
       typescript:
         specifier: ^5.4.2
         version: 5.4.2
+    devDependencies:
+      '@types/react':
+        specifier: ^19.1.2
+        version: 19.1.2
 
 packages:
 
