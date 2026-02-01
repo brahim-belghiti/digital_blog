@@ -24,7 +24,7 @@ KeySacan enables users to discover, list, and manage properties for buying or re
 - **Secure Authentication**: JWT-based auth with email verification, password reset, and remember-me functionality.
 - **User Dashboard**: Manage profile, favorites, and viewing history from a personalized dashboard.
 - **Responsive Design**: Fully optimized for desktops, tablets, and mobile devices with a mobile-first approach.
-- **Dynamic UI**: Smooth animations and modern interactions powered by Framer Motion and Radix UI.
+- **Dynamic UI**: Smooth animations and modern interactions powered by Framer Motion and Shadcn.
 - **Blog System**: Property-related content with Markdown rendering and category filtering.
 
 ## My Contributions
@@ -32,7 +32,7 @@ KeySacan enables users to discover, list, and manage properties for buying or re
 As the frontend developer, I was responsible for:
 
 - Building the entire frontend using **Next.js 16** with React 19, utilizing the App Router, Server Components, and React Compiler for optimal performance.
-- Designing a responsive and modern UI with **TailwindCSS 4** and **Radix UI**, ensuring accessibility and consistency across all devices.
+- Designing a responsive and modern UI with **TailwindCSS 4** and **Shadcn**, ensuring accessibility and consistency across all devices.
 - Implementing **Google Maps integration** with custom clustering, QR code markers, and location-based property browsing.
 - Building a robust authentication system with **Zustand** state management, JWT tokens, and secure cookie handling.
 - Creating efficient data fetching patterns with **React Query** for caching, optimistic updates, and seamless API integration.
@@ -50,7 +50,7 @@ The result is a visually appealing, high-performing real estate platform that de
 | Language | TypeScript 5 |
 | UI Library | React 19 |
 | Styling | TailwindCSS 4 |
-| UI Components | Radix UI |
+| UI Components | Shadcn |
 | State Management | Zustand |
 | Data Fetching | TanStack React Query |
 | Form Handling | React Hook Form + Zod |
@@ -77,10 +77,17 @@ The result is a visually appealing, high-performing real estate platform that de
 
 ## 📸 Screenshots
 
-| Homepage | search map with result | residence detail | property detail |
-|----------|----------------|------------|------------|
-| ![homepage]('/assets/projects/keysacan/index.png') | ![search map with result]('/assets/projects/keysacan/search_with_result.png') | ![Mindful-tube Video Page](https://user-images.githubusercontent.com/91473510/175263261-fb279205-dd05-45ac-afc9-1c8ebd68791f.png 'Mindful-tube Video Page') | ![Mindful-tube Completion](https://user-images.githubusercontent.com/91473510/175609692-85806950-fa61-4970-b57a-257588632141.png 'Mindful-tube Completion') |
+| Homepage | search map with result | 
+|----------|----------------|
+| ![homepage](/assets/projects/keysacan/index.png) | ![search map with result](/assets/projects/keysacan/search_with_result.png) | 
 
-## 🚀 Explore Mindful-tube
+|residence detail | property detail | proprety detail two | 
+|----------|----------------|------------|
+|![residence detail](/assets/projects/keysacan/residence_details.png) | ![property detail](/assets/projects/keysacan/property_details.png) | ![property detail two](/assets/projects/keysacan/proprety_details_2.png) |
+##### client dashboard 
+![client dashboard](/assets/projects/keysacan/client_dashboard.png)
+
+
+## 🚀 Explore Keysacan
 
 Visit the [the website](https://site.keysacan.com/fr) to try keysacan
