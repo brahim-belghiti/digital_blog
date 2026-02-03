@@ -1,5 +1,5 @@
 ---
-title: 'Keysacn - KeySacan is a multi-tenant real estate'
+title: 'Keysacn - KeySacan is a multi-tenant real estate SASS'
 description: 'KeySacan is a multi-tenant real estate SaaS platform built with Laravel and React. After establishing the initial UI/UX foundation.'
 date: '2025-11-01'
 demoURL: 'https://site.keysacan.com/fr'
