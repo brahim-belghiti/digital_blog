@@ -1,5 +1,5 @@
 ---
-title: 'Polycode - French driving school learning management system (LMS)'
+title: 'Polycode - Driving school learning management system (LMS)'
 description: 'PolyCode is a comprehensive French driving school learning management system (LMS) designed to help students prepare for the official French driving license exam (Code de la Route).'
 date: '2025-10-01'
 demoURL: 'https://my.polycode.net/#/register'
@@ -93,12 +93,6 @@ The system features a well-structured relational database with:
 
 
 ## 📸 Screenshots
-
-| Homepage | search map with result | 
-|----------|----------------|
-| ![homepage](/assets/projects/keysacan/index.png) |  | 
-
-
 
 
 ## 🚀 Explore polycode
