@@ -15,6 +15,7 @@ const { title, description } = Astro.props;
 <!doctype html>
 <html lang="en">
   <head>
+    <style is:inline>body{visibility:hidden}</style>
     <script is:inline>
       const t = localStorage.getItem("theme");
       if (t === "dark" || (t !== "light" && window.matchMedia("(prefers-color-scheme: dark)").matches)) {

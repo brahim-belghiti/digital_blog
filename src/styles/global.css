@@ -17,6 +17,7 @@ body {
 }
 
 body {
+  visibility: visible;
   @apply font-sans antialiased;
   @apply flex flex-col;
   @apply bg-stone-100 dark:bg-stone-900;
