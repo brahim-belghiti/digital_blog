@@ -6,7 +6,7 @@ import FormattedDate from '@components/common/FormattedDate.astro';
 import { readingTime } from '@lib/utils';
 import BackToPrev from '@components/navigation/BackToPrev.astro';
 import Link from '@components/common/Link.astro';
-import RelatedNotes from '@components/blog/related-notes.jsx';
+
 
 export async function getStaticPaths() {
   const posts = (await getCollection('blog'))
@@ -23,11 +23,7 @@ type Props = CollectionEntry<'blog'>;
 const post = Astro.props;
 const { Content } = await post.render();
 
-// Fetch related posts based on shared tags
-const allPosts = await getCollection('blog');
-const relatedPosts = allPosts
-  .filter(p => p.body?.includes(post.slug) && p.slug !== post.slug)
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
 ---
 
 <PageLayout title={post.data.title} description={post.data.description}>
@@ -55,7 +51,5 @@ const relatedPosts = allPosts
         ))}
       </div>
     </article>
-    
-    <RelatedNotes client:load posts={relatedPosts} />
   </Container>
 </PageLayout>
