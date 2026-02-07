@@ -7,7 +7,6 @@ import { readingTime } from '@lib/utils';
 import BackToPrev from '@components/navigation/BackToPrev.astro';
 import Link from '@components/common/Link.astro';
 import RelatedNotes from '@components/blog/related-notes.jsx';
-import SlideNotes from '@components/blog/sliding-notes';
 
 export async function getStaticPaths() {
   const posts = (await getCollection('blog'))
@@ -56,9 +55,6 @@ const relatedPosts = allPosts
         ))}
       </div>
     </article>
-    
-    <!-- Add the SlideNotes component -->
-    <SlideNotes client:only="react" />
     
     <RelatedNotes client:load posts={relatedPosts} />
   </Container>
