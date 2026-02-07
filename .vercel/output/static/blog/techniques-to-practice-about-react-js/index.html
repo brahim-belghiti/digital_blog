@@ -1,0 +1,701 @@
+<!DOCTYPE html><html lang="en"> <head><script>
+      const t = localStorage.getItem("theme");
+      if (t === "dark" || (t !== "light" && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.classList.add("dark");
+      }
+    </script><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon-dark.svg" media="(prefers-color-scheme: dark)"><link rel="icon" type="image/svg+xml" href="/favicon-light.svg" media="(prefers-color-scheme: light)"><link rel="icon" type="image/x-icon" href="/favicon-light.svg">l
+<meta name="generator" content="Astro v5.7.4"> <!-- Canonical URL --> <link rel="canonical" href="https://astro-nano-demo.vercel.app/blog/techniques-to-practice-about-react-js/"> <!-- Primary Meta Tags --> <title>Techniques to practice about React JS | Brahim Belghiti</title> <meta name="title" content="Techniques to practice about React JS | Brahim Belghiti"> <meta name="description" content> <!-- Open Graph / Facebook --> <meta property="og:type" content="website"> <meta property="og:url" content="https://astro-nano-demo.vercel.app/blog/techniques-to-practice-about-react-js/"> <meta property="og:title" content="Techniques to practice about React JS | Brahim Belghiti"> <meta property="og:description" content> <meta property="og:image" content="https://astro-nano-demo.vercel.app/nano.png"> <!-- Twitter --> <meta property="twitter:card" content="summary_large_image"> <meta property="twitter:url" content="https://astro-nano-demo.vercel.app/blog/techniques-to-practice-about-react-js/"> <meta property="twitter:title" content="Techniques to practice about React JS | Brahim Belghiti"> <meta property="twitter:description" content> <meta property="twitter:image" content="https://astro-nano-demo.vercel.app/nano.png"> <script type="module">document.addEventListener("astro:before-swap",e=>[...e.newDocument.head.querySelectorAll('link[as="font"]')].forEach(o=>o.remove()));</script> <script>
+  function init() {
+    preloadTheme();
+    onScroll();
+    animate();
+
+    const backToTop = document.getElementById("back-to-top");
+    backToTop?.addEventListener("click", (event) => scrollToTop(event));
+
+    const backToPrev = document.getElementById("back-to-prev");
+    backToPrev?.addEventListener("click", () => window.history.back());
+
+    const lightThemeButton = document.getElementById("light-theme-button");
+    lightThemeButton?.addEventListener("click", () => {
+      localStorage.setItem("theme", "light");
+      toggleTheme(false);
+    });
+
+    const darkThemeButton = document.getElementById("dark-theme-button");
+    darkThemeButton?.addEventListener("click", () => {
+      localStorage.setItem("theme", "dark");
+      toggleTheme(true);
+    });
+
+    const systemThemeButton = document.getElementById("system-theme-button");
+    systemThemeButton?.addEventListener("click", () => {
+      localStorage.setItem("theme", "system");
+      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    });
+
+    window.matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", event => {
+        if (localStorage.theme === "system") {
+          toggleTheme(event.matches);
+        }
+      }
+    );
+
+    document.addEventListener("scroll", onScroll);
+  }
+
+  function animate() {
+    const animateElements = document.querySelectorAll(".animate");
+
+    animateElements.forEach((element, index) => {
+      setTimeout(() => {
+        element.classList.add("show");
+      }, index * 150);
+    });
+  }
+
+  function onScroll() {
+    if (window.scrollY > 0) {
+      document.documentElement.classList.add("scrolled");
+    } else {
+      document.documentElement.classList.remove("scrolled");
+    }
+  }
+
+  function scrollToTop(event) {
+    event.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+
+function toggleTheme(dark) {
+    const css = document.createElement("style");
+
+    css.appendChild(
+      document.createTextNode(
+        `* {
+             -webkit-transition: none !important;
+             -moz-transition: none !important;
+             -o-transition: none !important;
+             -ms-transition: none !important;
+             transition: none !important;
+          }
+        `,
+      )
+    );
+
+    document.head.appendChild(css);
+
+    if (dark) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+
+  window.getComputedStyle(css).opacity;
+    document.head.removeChild(css);
+  }
+
+  function preloadTheme() {
+    const userTheme = localStorage.theme;
+
+    if (userTheme === "light" || userTheme === "dark") {
+      toggleTheme(userTheme === "dark");
+    } else {
+      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => init());
+  document.addEventListener("astro:after-swap", () => init());
+  preloadTheme();
+</script><link rel="stylesheet" href="/_astro/_slug_.pAKEBlb0.css"></head> <body> <header> <div class="mx-auto lg:w-7/12 px-5">  <div class="flex flex-wrap gap-y-2 justify-between"> <nav class="flex gap-1"> <a href="/" target="_self" class="text-sm font-semibold dark:text-white inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out underline underline-offset-2"> index </a><a href="/blog" target="_self" class="text-sm font-semibold dark:text-white inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out underline underline-offset-2"> blog </a><a href="/projects" target="_self" class="text-sm font-semibold dark:text-white inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out underline underline-offset-2"> projects </a> </nav> <div class="flex flex-wrap gap-1 items-center"> <button id="light-theme-button" aria-label="Light theme" class="group size-8 flex items-center justify-center rounded-full"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:stroke-black group-hover:dark:stroke-white transition-colors duration-300 ease-in-out"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> </button> <button id="dark-theme-button" aria-label="Dark theme" class="group size-8 flex items-center justify-center rounded-full"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:stroke-black group-hover:dark:stroke-white transition-colors duration-300 ease-in-out"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> </button> <button id="system-theme-button" aria-label="System theme" class="group size-8 flex items-center justify-center rounded-full"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:stroke-black group-hover:dark:stroke-white transition-colors duration-300 ease-in-out"> <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect> <line x1="8" y1="21" x2="16" y2="21"></line> <line x1="12" y1="17" x2="12" y2="21"></line> </svg> </button> </div> </div>  </div> </header> <main>  <div class="mx-auto lg:w-7/12 px-5">  <div class="animate"> <a href="/blog" class="relative group w-fit flex pl-7 pr-3 py-1.5 flex-nowrap rounded border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="absolute top-1/2 left-2 -translate-y-1/2 size-4 stroke-2 fill-none stroke-current"> <line x1="5" y1="12" x2="19" y2="12" class="translate-x-2 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></line> <polyline points="12 5 5 12 12 19" class="translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></polyline> </svg> <div class="text-sm">  Back to notes  </div> </a> </div> <div class="space-y-2 my-10"> <div class="animate flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 font-sans"> <time datetime="2024-03-17T00:00:00.000Z"> Mar 17, 2024 </time> <span>•</span> <span>15 min read</span> </div> <h1 class="animate text-3xl font-semibold text-black dark:text-white font-sans"> Techniques to practice about React JS </h1> </div> <article class="animate prose dark:prose-invert max-w-none font-sans"> <p>some of the workflows and best practices.</p>
+<h3 id="passing-props">passing props</h3>
+<p>one of the most use design pattern. and used separating logic component from display components, and create composing modular components</p>
+<h3 id="using-a-layout-component">Using a Layout Component</h3>
+<p><strong>Problem Statement</strong><br>
+When multiple pages in an application share common elements (e.g., navigation, footer, or a menu in a dashboard), replicating these components [[in React JS components are reusable pieces of UI that can be defined as functions (or classes) that return elements, often written in JSX|components]] on every page becomes redundant and error-prone. Instead, we can create a root <code>Layout</code> component that encapsulates these shared elements and renders specific page content dynamically.</p>
+<p><strong>Solution</strong><br>
+Define a <code>Layout</code> component that acts as a wrapper for shared components and renders child components dynamically,  the child components are passed as [[in React JS props are used to pass data from a parent component to a child component|props]] :</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"></span>
+<span class="line"><span style="color:#6A737D">/** the layout component */</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> Layout</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">({</span><span style="color:#FFAB70">children</span><span style="color:#E1E4E8">}</span><span style="color:#F97583">:</span><span style="color:#E1E4E8">{</span><span style="color:#FFAB70">childre</span><span style="color:#F97583">:</span><span style="color:#B392F0"> React</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">ReactNode</span><span style="color:#E1E4E8">})</span><span style="color:#F97583">=></span><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#F97583">&#x3C;></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">header</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">nav</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  what whill be shard between all </span><span style="color:#FFAB70">pages</span></span>
+<span class="line"><span style="color:#F97583">&#x3C;/</span><span style="color:#E1E4E8">nav</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#F97583">&#x3C;/</span><span style="color:#E1E4E8">header</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#B392F0">main</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  {</span><span style="color:#FFAB70">children</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#F97583">  &#x3C;/</span><span style="color:#E1E4E8">main</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#F97583">&#x3C;/></span></span>
+<span class="line"><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"> /** using the layout component */</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583"> const</span><span style="color:#B392F0"> page</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> ()</span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#F97583">  &#x3C;></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#B392F0">Layout</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#B392F0">section</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">     &#x3C;</span><span style="color:#B392F0">p</span><span style="color:#E1E4E8">>the content </span><span style="color:#F97583">of</span><span style="color:#E1E4E8"> the page</span><span style="color:#F97583">&#x3C;/</span><span style="color:#E1E4E8">p</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#F97583">    &#x3C;/</span><span style="color:#E1E4E8">section</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#F97583">    &#x3C;/</span><span style="color:#E1E4E8">Layout</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#F97583">  &#x3C;/></span></span>
+<span class="line"><span style="color:#E1E4E8">  )</span></span>
+<span class="line"><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#E1E4E8"> }</span></span></code></pre>
+<p><strong>Key Benefits</strong></p>
+<ul>
+<li><strong>Reusability</strong>: Centralizes shared elements in a single component.</li>
+<li><strong>Consistency</strong>: Ensures layout elements like navigation or footers remain uniform across pages.</li>
+<li><strong>Maintainability</strong>: Any change to shared elements is done in one place.</li>
+</ul>
+<h3 id="authentication-flow">Authentication Flow</h3>
+<p><strong>Problem Statement</strong><br>
+Authentication ensures that the user requesting access to the application is valid. The goal is to securely validate user credentials while providing feedback and ensuring a good user experience.
+<strong>Solution Breakdown</strong></p>
+<ol>
+<li>
+<p><strong>UI Management</strong>:</p>
+<ul>
+<li><strong>State Management</strong>: Use <code>useState</code> or <code>useReducer</code> for managing input values and UI states (loading, errors, etc.).</li>
+<li><strong>Input Validation</strong>: Libraries like <a href="https://zod.dev/">Zod</a> can ensure input adheres to required schemas.</li>
+</ul>
+</li>
+<li>
+<p><strong>Backend Communication</strong>:</p>
+<ul>
+<li><strong>Request Handling</strong>: Use <code>useEffect</code> for communicating with the server.</li>
+<li><strong>Custom Hook</strong>: Abstract the request logic into a custom hook for better reusability and encapsulation.</li>
+</ul>
+</li>
+</ol>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { useState } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "react"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { z } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "zod"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8"># shema validation </span><span style="color:#F97583">with</span><span style="color:#E1E4E8"> zod</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> schema</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> z.</span><span style="color:#B392F0">object</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">  email: z.</span><span style="color:#B392F0">string</span><span style="color:#E1E4E8">().</span><span style="color:#B392F0">email</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Invalid email address"</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#E1E4E8">  password: z.</span><span style="color:#B392F0">string</span><span style="color:#E1E4E8">().</span><span style="color:#B392F0">min</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">6</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"Password must be at least 6 characters long"</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"><span style="color:#6A737D">/** custom hooks for communicating with the backend (Authentification happens on the server) */</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> useAuthenticate</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> ()</span><span style="color:#F97583">=></span><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">loading</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setLoading</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#B392F0">useEffect</span><span style="color:#E1E4E8">(()</span><span style="color:#F97583">=></span><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#B392F0">   setLoading</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">   try</span><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#E1E4E8">      cnst re</span></span>
+<span class="line"><span style="color:#E1E4E8">   }</span></span>
+<span class="line"><span style="color:#F97583">   catch</span><span style="color:#E1E4E8"> (error) {</span></span>
+<span class="line"><span style="color:#E1E4E8">   }</span></span>
+<span class="line"><span style="color:#E1E4E8">   finaly {</span></span>
+<span class="line"><span style="color:#E1E4E8">   }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">}, [])</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#6A737D">/** component for the UI that handles getting data from the user and displayig back the repsonse */</span></span>
+<span class="line"></span></code></pre>
+<h3 id="authorization"><strong>Authorization</strong></h3>
+<p><strong>Problem Statement</strong><br>
+authorization is about making sure the identified user, have access the features of the application in react term, that the user have access to routes.
+authorization happens in the back-end first, and then depending on the answer from the server you either give access the user request on not.</p>
+<p><strong>Solution breakdown</strong>
+using the concept of <strong>conditional rendering</strong> you can show the parts of the application that user has access to.
+<strong>Solution</strong></p>
+<ul>
+<li>Perform authorization checks on the server.</li>
+<li>On the client, use <strong>conditional rendering</strong> to hide unauthorized features.</li>
+<li>For route protection, use libraries like <code>react-router</code> to implement guards.</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> ProtectedComponent</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> ({ </span><span style="color:#FFAB70">isAuthorized</span><span style="color:#E1E4E8"> }</span><span style="color:#F97583">:</span><span style="color:#E1E4E8"> { </span><span style="color:#FFAB70">isAuthorized</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> boolean</span><span style="color:#E1E4E8"> }) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#B392F0">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      {</span><span style="color:#FFAB70">isAuthorized</span><span style="color:#E1E4E8"> ? (</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#FFAB70">p</span><span style="color:#E1E4E8">></span><span style="color:#FFAB70">Welcome</span><span style="color:#FFAB70"> to</span><span style="color:#FFAB70"> the</span><span style="color:#FFAB70"> protected</span><span style="color:#FFAB70"> content</span><span style="color:#E1E4E8">.&#x3C;/</span><span style="color:#FFAB70">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      ) : (</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#FFAB70">p</span><span style="color:#E1E4E8">></span><span style="color:#FFAB70">You</span><span style="color:#FFAB70"> do</span><span style="color:#FFAB70"> not</span><span style="color:#FFAB70"> have</span><span style="color:#FFAB70"> access</span><span style="color:#E1E4E8">.&#x3C;/</span><span style="color:#FFAB70">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      )}</span></span>
+<span class="line"><span style="color:#F97583">    &#x3C;/</span><span style="color:#E1E4E8">div</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#E1E4E8">  );</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span></code></pre>
+<h3 id="fetching-data">fetching data</h3>
+<p>fetching data, is a site effect, is a state that lives in the server. so you need to use a mechanism to deal with fetching data form the server and synchronize it with client application state. React offers the [[useEffect is a hook for performing side effects|useEffect]] to deal with side Effect. And they are third library for better workflows and patters like SWR and React Query.</p>
+<p><strong>Best Practices</strong></p>
+<ul>
+<li>fetching date asynchronously</li>
+<li>having a loading state to use display UI when data is loading</li>
+<li>managing error and have UI to display to the user if an error happens.</li>
+<li>cash the fetched data for better performance</li>
+<li>re-fetch data periodically to have the data always updated</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { useEffect, useState } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "react"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> useFetchData</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">url</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">data</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setData</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">any</span><span style="color:#E1E4E8">>(</span><span style="color:#79B8FF">null</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">loading</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setLoading</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">error</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setError</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">string</span><span style="color:#F97583"> |</span><span style="color:#79B8FF"> null</span><span style="color:#E1E4E8">>(</span><span style="color:#79B8FF">null</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">  useEffect</span><span style="color:#E1E4E8">(() </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#B392F0"> fetchData</span><span style="color:#F97583"> =</span><span style="color:#F97583"> async</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">      setLoading</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">      try</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">        const</span><span style="color:#79B8FF"> response</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> fetch</span><span style="color:#E1E4E8">(url);</span></span>
+<span class="line"><span style="color:#F97583">        if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">response.ok) </span><span style="color:#F97583">throw</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Failed to fetch data"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">        const</span><span style="color:#79B8FF"> result</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#E1E4E8"> response.</span><span style="color:#B392F0">json</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#B392F0">        setData</span><span style="color:#E1E4E8">(result);</span></span>
+<span class="line"><span style="color:#E1E4E8">      } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">err</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> any</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#B392F0">        setError</span><span style="color:#E1E4E8">(err.message);</span></span>
+<span class="line"><span style="color:#E1E4E8">      } </span><span style="color:#F97583">finally</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">        setLoading</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">      }</span></span>
+<span class="line"><span style="color:#E1E4E8">    };</span></span>
+<span class="line"><span style="color:#B392F0">    fetchData</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">  }, [url]);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> { data, loading, error };</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Usage</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> DataComponent</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">data</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">loading</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">error</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useFetchData</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/api/data"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (loading) </span><span style="color:#F97583">return</span><span style="color:#E1E4E8"> &#x3C;</span><span style="color:#B392F0">p</span><span style="color:#E1E4E8">>Loading</span><span style="color:#F97583">...&#x3C;/</span><span style="color:#E1E4E8">p</span><span style="color:#F97583">></span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (error) </span><span style="color:#F97583">return</span><span style="color:#E1E4E8"> &#x3C;</span><span style="color:#B392F0">p</span><span style="color:#E1E4E8">>{error}</span><span style="color:#F97583">&#x3C;/</span><span style="color:#E1E4E8">p</span><span style="color:#F97583">></span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> &#x3C;</span><span style="color:#B392F0">div</span><span style="color:#E1E4E8">>{JSON.stringify(data)}</span><span style="color:#F97583">&#x3C;/</span><span style="color:#E1E4E8">div</span><span style="color:#F97583">></span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span></code></pre>
+<h3 id="extracting-custom-hooks">Extracting Custom Hooks</h3>
+<p><strong>Problem Statement</strong>
+As React applications grow in complexity, combining logic and UI in the same component makes the code harder to maintain, test, and reuse. Separating logic into custom hooks can resolve this issue.</p>
+<p><strong>Solution</strong>
+[[custom hooks in React abstract reusable logic and separate it from the rendering process in components, enhancing code reuse, readability, and maintainability across the application.]]</p>
+<p><strong>Key Benefits</strong></p>
+<ul>
+<li><strong>Reusability</strong>: Logic can be reused across multiple components.</li>
+<li><strong>Separation of Concerns</strong>: Keeps components focused on UI.</li>
+<li><strong>Simplified Testing</strong>: Hooks can be tested independently of UI.</li>
+</ul>
+<h3 id="composing-modular-components">Composing Modular Components</h3>
+<p><strong>Problem Statement</strong>
+Complex components often become bloated and difficult to manage. Breaking them into smaller, reusable pieces improves readability and maintainability.</p>
+<p><strong>Solution</strong>
+[[the most important design pattern in React is component composition.]] and it is done by [[extracting components in React promotes re-usability, adheres to the single responsibility principle, enhances readability, simplifies testing, and improves encapsulation of functionality, resulting in a more maintainable code-base.]]</p>
+<p><strong>Key Benefits</strong></p>
+<ul>
+<li><strong>Reusability</strong>: Smaller components can be reused across the app.</li>
+<li><strong>Readability</strong>: Simplifies understanding of individual components.</li>
+<li><strong>Scalability</strong>: Easier to manage and extend functionality.</li>
+</ul>
+<h3 id="separating-logic-components-from-display-components">Separating Logic Components from Display Components</h3>
+<p><strong>Problem Statement</strong>
+Mixing logic and display code in the same component makes it harder to test, reuse, and maintain.</p>
+<p><strong>Solution</strong>
+Create container components for logic and presentation components for UI. Pass data as props from the container to the presentation component.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#6A737D">// this the logic component responsile for logic (in this case it has data, but normaly the data will be fetched form a server)</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> BlogContainer</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> blogData</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> [</span></span>
+<span class="line"><span style="color:#E1E4E8">    { id: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, title: </span><span style="color:#9ECBFF">"First Post"</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">    { id: </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, title: </span><span style="color:#9ECBFF">"Second Post"</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">  ];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> &#x3C;</span><span style="color:#B392F0">BlogList</span><span style="color:#B392F0"> blogs</span><span style="color:#E1E4E8">={</span><span style="color:#FFAB70">blogData</span><span style="color:#E1E4E8">} />;</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// this is the presentation component is only responsible for displaying data passed to it by props.</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> BlogList</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> ({ </span><span style="color:#FFAB70">blogs</span><span style="color:#E1E4E8"> }</span><span style="color:#F97583">:</span><span style="color:#E1E4E8"> { </span><span style="color:#FFAB70">blogs</span><span style="color:#F97583">:</span><span style="color:#E1E4E8"> { </span><span style="color:#FFAB70">id</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> number</span><span style="color:#E1E4E8">; </span><span style="color:#FFAB70">title</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8"> }[] }) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#B392F0">ul</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      {</span><span style="color:#FFAB70">blogs</span><span style="color:#E1E4E8">.</span><span style="color:#FFAB70">map</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">blog</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#F97583">        &#x3C;</span><span style="color:#E1E4E8">li key</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{blog.id}</span><span style="color:#F97583">></span><span style="color:#E1E4E8">{blog.title}</span><span style="color:#F97583">&#x3C;/</span><span style="color:#E1E4E8">li</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#E1E4E8">      ))}</span></span>
+<span class="line"><span style="color:#F97583">    &#x3C;/</span><span style="color:#E1E4E8">ul</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#E1E4E8">  );</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span></code></pre>
+<p><strong>Key Benefits</strong></p>
+<ul>
+<li><strong>Readability</strong>: Clear separation between logic and UI.</li>
+<li><strong>Reusability</strong>: Presentation components can be used in multiple places.</li>
+<li><strong>Testability</strong>: Logic can be tested independently.</li>
+</ul>
+<h3 id="routing">Routing</h3>
+<p><strong>Problem Statement</strong>
+Single Page Applications (SPAs) need routing to navigate between different views or pages. Managing routes effectively is essential for user experience and maintainability.</p>
+<p><strong>Solution</strong>
+Use libraries like <code>react-router</code> or frameworks like Next.js to define routes and handle navigation.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { BrowserRouter </span><span style="color:#F97583">as</span><span style="color:#E1E4E8"> Router, Route, Switch } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "react-router-dom"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> HomePage</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> &#x3C;</span><span style="color:#B392F0">h1</span><span style="color:#E1E4E8">>Home</span><span style="color:#F97583">&#x3C;/</span><span style="color:#E1E4E8">h1</span><span style="color:#F97583">></span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> AboutPage</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> &#x3C;</span><span style="color:#B392F0">h1</span><span style="color:#E1E4E8">>About</span><span style="color:#F97583">&#x3C;/</span><span style="color:#E1E4E8">h1</span><span style="color:#F97583">></span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> App</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#B392F0">Router</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#B392F0">Switch</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#F97583">        &#x3C;</span><span style="color:#E1E4E8">Route path</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"/"</span><span style="color:#E1E4E8"> exact component</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{HomePage} </span><span style="color:#F97583">/></span></span>
+<span class="line"><span style="color:#F97583">        &#x3C;</span><span style="color:#E1E4E8">Route path</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"/about"</span><span style="color:#E1E4E8"> component</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{AboutPage} </span><span style="color:#F97583">/></span></span>
+<span class="line"><span style="color:#F97583">      &#x3C;/</span><span style="color:#E1E4E8">Switch</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#F97583">    &#x3C;/</span><span style="color:#E1E4E8">Router</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#E1E4E8">  );</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span></code></pre>
+<p><strong>Key Benefits</strong></p>
+<ul>
+<li><strong>Navigation</strong>: Enables seamless transitions between views.</li>
+<li><strong>Scalability</strong>: Simplifies management of multiple pages.</li>
+<li><strong>SEO</strong>: Frameworks like Next.js improve search engine optimization.</li>
+</ul>
+<h3 id="form-validation">Form Validation</h3>
+<p><strong>Problem Statement</strong>
+Forms are integral to web applications, but ensuring user input is valid can be complex without proper validation techniques.</p>
+<p><strong>Solution</strong>
+Use libraries like Zod or React Hook Form for robust form validation.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { useForm } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "react-hook-form"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { z } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "zod"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { zodResolver } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@hookform/resolvers/zod"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// the schema for validation with zod</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> schema</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> z.</span><span style="color:#B392F0">object</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">  email: z.</span><span style="color:#B392F0">string</span><span style="color:#E1E4E8">().</span><span style="color:#B392F0">email</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Invalid email"</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#E1E4E8">  password: z.</span><span style="color:#B392F0">string</span><span style="color:#E1E4E8">().</span><span style="color:#B392F0">min</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">6</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"Password must be at least 6 characters"</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"><span style="color:#6A737D">// the form component using the zod schema to validate data on the clinent</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> LoginForm</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">    register</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    handleSubmit</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#FFAB70">    formState</span><span style="color:#E1E4E8">: { </span><span style="color:#79B8FF">errors</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">  } </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useForm</span><span style="color:#E1E4E8">({ resolver: </span><span style="color:#B392F0">zodResolver</span><span style="color:#E1E4E8">(schema) });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#B392F0"> onSubmit</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">data</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> any</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(data);</span></span>
+<span class="line"><span style="color:#E1E4E8">  };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#F97583">    &#x3C;</span><span style="color:#E1E4E8">form onSubmit</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{</span><span style="color:#B392F0">handleSubmit</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">onSubmit</span><span style="color:#E1E4E8">)}</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#B392F0">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#B392F0">label</span><span style="color:#E1E4E8">></span><span style="color:#B392F0">Email</span><span style="color:#F97583">:</span><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#B392F0">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#F97583">        &#x3C;</span><span style="color:#E1E4E8">input {</span><span style="color:#F97583">...</span><span style="color:#FFAB70">register</span><span style="color:#E1E4E8">("</span><span style="color:#FFAB70">email</span><span style="color:#E1E4E8">")} </span><span style="color:#F97583">/></span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span><span style="color:#FFAB70">errors</span><span style="color:#E1E4E8">.</span><span style="color:#FFAB70">email</span><span style="color:#E1E4E8"> &#x26;&#x26; &#x3C;</span><span style="color:#FFAB70">p</span><span style="color:#E1E4E8">>{</span><span style="color:#FFAB70">errors</span><span style="color:#E1E4E8">.</span><span style="color:#FFAB70">email</span><span style="color:#E1E4E8">.</span><span style="color:#FFAB70">message</span><span style="color:#E1E4E8">}&#x3C;/</span><span style="color:#FFAB70">p</span><span style="color:#E1E4E8">>}</span></span>
+<span class="line"><span style="color:#F97583">      &#x3C;/</span><span style="color:#E1E4E8">div</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#B392F0">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#B392F0">label</span><span style="color:#E1E4E8">></span><span style="color:#B392F0">Password</span><span style="color:#F97583">:</span><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#B392F0">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#F97583">        &#x3C;</span><span style="color:#E1E4E8">input type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"password"</span><span style="color:#E1E4E8"> {</span><span style="color:#F97583">...</span><span style="color:#FFAB70">register</span><span style="color:#E1E4E8">("</span><span style="color:#FFAB70">password</span><span style="color:#E1E4E8">")} </span><span style="color:#F97583">/></span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span><span style="color:#FFAB70">errors</span><span style="color:#E1E4E8">.</span><span style="color:#FFAB70">password</span><span style="color:#E1E4E8"> &#x26;&#x26; &#x3C;</span><span style="color:#FFAB70">p</span><span style="color:#E1E4E8">>{</span><span style="color:#FFAB70">errors</span><span style="color:#E1E4E8">.</span><span style="color:#FFAB70">password</span><span style="color:#E1E4E8">.</span><span style="color:#FFAB70">message</span><span style="color:#E1E4E8">}&#x3C;/</span><span style="color:#FFAB70">p</span><span style="color:#E1E4E8">>}</span></span>
+<span class="line"><span style="color:#F97583">      &#x3C;/</span><span style="color:#E1E4E8">div</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#F97583">      &#x3C;</span><span style="color:#E1E4E8">button type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"submit"</span><span style="color:#F97583">></span><span style="color:#E1E4E8">Login</span><span style="color:#F97583">&#x3C;/</span><span style="color:#E1E4E8">button</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#F97583">    &#x3C;/</span><span style="color:#E1E4E8">form</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#E1E4E8">  );</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span></code></pre>
+<p><strong>Key Benefits</strong></p>
+<ul>
+<li><strong>User Experience</strong>: Provides immediate feedback to users.</li>
+<li><strong>Consistency</strong>: Ensures data integrity before submission.</li>
+<li><strong>Efficiency</strong>: Reduces errors with declarative validation schemas.</li>
+</ul>
+<h3 id="working-with-typescript">Working with Typescript</h3>
+<p><strong>Problem Statement</strong>
+React applications require a way to ensure type safety, especially in larger projects. Without TypeScript, type-related errors might only surface at runtime, leading to bugs and inefficiencies.</p>
+<p><strong>Solution</strong>
+Use Typescript to define the types of props, state, function parameters, and API responses. This helps catch errors during development and improves code clarity.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#6A737D">// Typing component props</span></span>
+<span class="line"><span style="color:#F97583">interface</span><span style="color:#B392F0"> ButtonProps</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#FFAB70">  label</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#B392F0">  onClick</span><span style="color:#F97583">:</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#79B8FF"> void</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> Button</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> ({ </span><span style="color:#FFAB70">label</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">onClick</span><span style="color:#E1E4E8"> }</span><span style="color:#F97583">:</span><span style="color:#B392F0"> ButtonProps</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> &#x3C;</span><span style="color:#B392F0">button</span><span style="color:#B392F0"> onClick</span><span style="color:#E1E4E8">={</span><span style="color:#FFAB70">onClick</span><span style="color:#E1E4E8">}>{label}</span><span style="color:#F97583">&#x3C;/</span><span style="color:#E1E4E8">button</span><span style="color:#F97583">></span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Typing API responses</span></span>
+<span class="line"><span style="color:#F97583">interface</span><span style="color:#B392F0"> User</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#FFAB70">  id</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> number</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">  name</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> fetchUsers</span><span style="color:#F97583"> =</span><span style="color:#F97583"> async</span><span style="color:#E1E4E8"> ()</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Promise</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">User</span><span style="color:#E1E4E8">[]> </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> response</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/api/users"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> response.</span><span style="color:#B392F0">json</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Typing hooks</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> useCounter</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">initialValue</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> number</span><span style="color:#E1E4E8">)</span><span style="color:#F97583">:</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">number</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#79B8FF"> void</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">count</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setCount</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(initialValue);</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#B392F0"> increment</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setCount</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">prev</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> prev </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> [count, increment];</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span></code></pre>
+<p><strong>Key Benefits</strong></p>
+<ul>
+<li><strong>Type Safety</strong>: Prevents runtime errors by enforcing types at compile time.</li>
+<li><strong>Documentation</strong>: Acts as self-documenting code.</li>
+<li><strong>Developer Experience</strong>: Improves autocompletion and reduces debugging time.</li>
+</ul>
+<h3 id="filtering--searching-data">Filtering &#x26; Searching Data</h3>
+<p><strong>Problem Statement</strong><br>
+Implementing filtering and searching logic in applications can lead to excessive state management and performance bottlenecks if not handled properly. Derived states can often replace redundant state storage.</p>
+<p><strong>Solution</strong><br>
+Leverage JavaScript’s array methods like <code>filter</code> and <code>map</code> to dynamically process data. Store only the essential query parameters in the state or URL for persistence.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> SearchableList</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> ({ </span><span style="color:#FFAB70">items</span><span style="color:#E1E4E8"> }</span><span style="color:#F97583">:</span><span style="color:#E1E4E8"> { </span><span style="color:#FFAB70">items</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">[] }) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">query</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setQuery</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">""</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> filteredItems</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> useMemo</span><span style="color:#E1E4E8">(() </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> items.</span><span style="color:#B392F0">filter</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">item</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> item.</span><span style="color:#B392F0">toLowerCase</span><span style="color:#E1E4E8">().</span><span style="color:#B392F0">includes</span><span style="color:#E1E4E8">(query.</span><span style="color:#B392F0">toLowerCase</span><span style="color:#E1E4E8">()));</span></span>
+<span class="line"><span style="color:#E1E4E8">  }, [query, items]);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#B392F0">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#F97583">      &#x3C;</span><span style="color:#FFAB70">input</span></span>
+<span class="line"><span style="color:#E1E4E8">        type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"text"</span></span>
+<span class="line"><span style="color:#E1E4E8">        placeholder</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Search..."</span></span>
+<span class="line"><span style="color:#E1E4E8">        value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{query}</span></span>
+<span class="line"><span style="color:#E1E4E8">        onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(e) => </span><span style="color:#B392F0">setQuery</span><span style="color:#E1E4E8">(e.target.value)}</span></span>
+<span class="line"><span style="color:#F97583">      /></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#B392F0">ul</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span><span style="color:#FFAB70">filteredItems</span><span style="color:#E1E4E8">.</span><span style="color:#FFAB70">map</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">item</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">index</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#F97583">          &#x3C;</span><span style="color:#E1E4E8">li key</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{index}</span><span style="color:#F97583">></span><span style="color:#E1E4E8">{item}</span><span style="color:#F97583">&#x3C;/</span><span style="color:#E1E4E8">li</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#E1E4E8">        ))}</span></span>
+<span class="line"><span style="color:#F97583">      &#x3C;/</span><span style="color:#E1E4E8">ul</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#F97583">    &#x3C;/</span><span style="color:#E1E4E8">div</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#E1E4E8">  );</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span></code></pre>
+<p><strong>Key Benefits</strong></p>
+<ul>
+<li><strong>Efficiency</strong>: Avoids unnecessary state management by deriving filtered data.</li>
+<li><strong>Flexibility</strong>: Enables dynamic filtering without pre-computation.</li>
+<li><strong>Persistence</strong>: Query parameters in the URL allow users to share filtered views.</li>
+</ul>
+<h3 id="working-with-tables">Working with Tables</h3>
+<p><strong>Problem Statement</strong><br>
+Displaying tabular data is a common use case in web applications. Without proper libraries, managing features like sorting, pagination, and filtering manually can be cumbersome and error-prone.</p>
+<p><strong>Solution</strong><br>
+Use a library like <a href="https://tanstack.com/table/v8">TanStack Table</a> to simplify working with tables. TanStack Table is highly customizable and supports advanced features like server-side pagination, sorting, and filtering.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { useTable, Column } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@tanstack/react-table"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">type</span><span style="color:#B392F0"> Data</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#FFAB70">  id</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> number</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">  name</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">  age</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> number</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> data</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Data</span><span style="color:#E1E4E8">[] </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> [</span></span>
+<span class="line"><span style="color:#E1E4E8">  { id: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, name: </span><span style="color:#9ECBFF">"John"</span><span style="color:#E1E4E8">, age: </span><span style="color:#79B8FF">25</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">  { id: </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, name: </span><span style="color:#9ECBFF">"Jane"</span><span style="color:#E1E4E8">, age: </span><span style="color:#79B8FF">30</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">  { id: </span><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">, name: </span><span style="color:#9ECBFF">"Smith"</span><span style="color:#E1E4E8">, age: </span><span style="color:#79B8FF">28</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> columns</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Column</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">Data</span><span style="color:#E1E4E8">>[] </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> [</span></span>
+<span class="line"><span style="color:#E1E4E8">  {</span></span>
+<span class="line"><span style="color:#E1E4E8">    accessorKey: </span><span style="color:#9ECBFF">"name"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    header: </span><span style="color:#9ECBFF">"Name"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#E1E4E8">  {</span></span>
+<span class="line"><span style="color:#E1E4E8">    accessorKey: </span><span style="color:#9ECBFF">"age"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    header: </span><span style="color:#9ECBFF">"Age"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#E1E4E8">];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> TableComponent</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">getHeaderGroups</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">getRowModel</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useTable</span><span style="color:#E1E4E8">({ data, columns });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#B392F0">table</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#B392F0">thead</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span><span style="color:#FFAB70">getHeaderGroups</span><span style="color:#E1E4E8">().</span><span style="color:#FFAB70">map</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">headerGroup</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#F97583">          &#x3C;</span><span style="color:#E1E4E8">tr key</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{headerGroup.id}</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#E1E4E8">            {</span><span style="color:#FFAB70">headerGroup</span><span style="color:#E1E4E8">.</span><span style="color:#FFAB70">headers</span><span style="color:#E1E4E8">.</span><span style="color:#FFAB70">map</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">header</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#F97583">              &#x3C;</span><span style="color:#E1E4E8">th key</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{header.id}</span><span style="color:#F97583">></span><span style="color:#E1E4E8">{header.renderHeader()}</span><span style="color:#F97583">&#x3C;/</span><span style="color:#E1E4E8">th</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#E1E4E8">            ))}</span></span>
+<span class="line"><span style="color:#F97583">          &#x3C;/</span><span style="color:#E1E4E8">tr</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#E1E4E8">        ))}</span></span>
+<span class="line"><span style="color:#F97583">      &#x3C;/</span><span style="color:#E1E4E8">thead</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#B392F0">tbody</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span><span style="color:#FFAB70">getRowModel</span><span style="color:#E1E4E8">().</span><span style="color:#FFAB70">rows</span><span style="color:#E1E4E8">.</span><span style="color:#FFAB70">map</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">row</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#F97583">          &#x3C;</span><span style="color:#E1E4E8">tr key</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{row.id}</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#E1E4E8">            {</span><span style="color:#FFAB70">row</span><span style="color:#E1E4E8">.</span><span style="color:#FFAB70">getVisibleCells</span><span style="color:#E1E4E8">().</span><span style="color:#FFAB70">map</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">cell</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#F97583">              &#x3C;</span><span style="color:#E1E4E8">td key</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{cell.id}</span><span style="color:#F97583">></span><span style="color:#E1E4E8">{cell.renderCell()}</span><span style="color:#F97583">&#x3C;/</span><span style="color:#E1E4E8">td</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#E1E4E8">            ))}</span></span>
+<span class="line"><span style="color:#F97583">          &#x3C;/</span><span style="color:#E1E4E8">tr</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#E1E4E8">        ))}</span></span>
+<span class="line"><span style="color:#F97583">      &#x3C;/</span><span style="color:#E1E4E8">tbody</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#F97583">    &#x3C;/</span><span style="color:#E1E4E8">table</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#E1E4E8">  );</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span></code></pre>
+<p><strong>Key Benefits</strong></p>
+<ul>
+<li><strong>Ease of Use</strong>: Simplifies the implementation of common table features.</li>
+<li><strong>Customizability</strong>: Provides flexibility for advanced use cases.</li>
+<li><strong>Performance</strong>: Optimized for handling large datasets.</li>
+</ul>
+<h3 id="using-external-libraries">Using External Libraries</h3>
+<p><strong>Problem Statement</strong><br>
+Building complex features from scratch can be time-consuming and may lead to inconsistent implementations. Relying on community-driven libraries can accelerate development while ensuring best practices.</p>
+<p><strong>Solution</strong><br>
+Identify and integrate trusted external libraries for specific use cases. For example:</p>
+<ul>
+<li><strong>State Management</strong>: <code>Redux</code>, <code>Zustand</code>.</li>
+<li><strong>Data Fetching</strong>: <code>React Query</code>, <code>Axios</code>.</li>
+<li><strong>Form Validation</strong>: <code>React Hook Form</code>, <code>Zod</code>.</li>
+<li><strong>Styling</strong>: <code>Tailwind CSS</code>, <code>Styled Components</code>.</li>
+</ul>
+<p><strong>Key Benefits</strong></p>
+<ul>
+<li><strong>Time Efficiency</strong>: Reduces development effort.</li>
+<li><strong>Community Support</strong>: Access to documentation and community expertise.</li>
+<li><strong>Standardization</strong>: Encourages adherence to widely accepted patterns.</li>
+</ul>
+<h3 id="i18n-internationalization">i18n (Internationalization)</h3>
+<p><strong>Problem Statement</strong><br>
+Supporting multiple languages in a React application can be challenging without a proper framework for managing translations and locale-based content.</p>
+<p><strong>Solution</strong><br>
+Use libraries like <code>react-i18next</code> to manage translations and locale switching.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { useTranslation } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "react-i18next"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> App</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">t</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">i18n</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useTranslation</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#B392F0"> changeLanguage</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">lang</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    i18n.</span><span style="color:#B392F0">changeLanguage</span><span style="color:#E1E4E8">(lang);</span></span>
+<span class="line"><span style="color:#E1E4E8">  };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#B392F0">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#B392F0">h1</span><span style="color:#E1E4E8">>{</span><span style="color:#B392F0">t</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"welcome_message"</span><span style="color:#E1E4E8">)}</span><span style="color:#F97583">&#x3C;/</span><span style="color:#E1E4E8">h1</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#F97583">      &#x3C;</span><span style="color:#E1E4E8">button onClick</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{() => </span><span style="color:#B392F0">changeLanguage</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"en"</span><span style="color:#E1E4E8">)}</span><span style="color:#F97583">></span><span style="color:#E1E4E8">English</span><span style="color:#F97583">&#x3C;/</span><span style="color:#E1E4E8">button</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#F97583">      &#x3C;</span><span style="color:#E1E4E8">button onClick</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{() => </span><span style="color:#B392F0">changeLanguage</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"es"</span><span style="color:#E1E4E8">)}</span><span style="color:#F97583">></span><span style="color:#E1E4E8">Español</span><span style="color:#F97583">&#x3C;/</span><span style="color:#E1E4E8">button</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#F97583">    &#x3C;/</span><span style="color:#E1E4E8">div</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#E1E4E8">  );</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span></code></pre>
+<p><strong>Key Benefits</strong></p>
+<ul>
+<li><strong>Scalability</strong>: Simplifies managing multiple languages.</li>
+<li><strong>User Experience</strong>: Provides locale-specific content seamlessly.</li>
+<li><strong>Community Support</strong>: Popular libraries like <code>react-i18next</code> have extensive resour</li>
+</ul>
+<h3 id="ways-to-improve-performance">Ways to Improve Performance</h3>
+<p><strong>Problem Statement</strong><br>
+React applications can suffer from performance bottlenecks due to unnecessary re-renders, large bundles, and inefficient state management.</p>
+<p><strong>Solution</strong><br>
+Optimize performance using the following strategies:</p>
+<ul>
+<li><strong>Code Splitting</strong>: Use dynamic <code>import()</code> to load components only when needed.</li>
+<li><strong>React.memo</strong>: Prevent unnecessary re-renders of functional components.</li>
+<li><strong>useMemo</strong> and <strong>useCallback</strong>: Optimize expensive calculations and function references.</li>
+<li><strong>Lazy Loading</strong>: Defer loading of non-critical resources.</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> React, { memo, useMemo, useCallback } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "react"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> ExpensiveComponent</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> memo</span><span style="color:#E1E4E8">(({ </span><span style="color:#FFAB70">calculate</span><span style="color:#E1E4E8"> }</span><span style="color:#F97583">:</span><span style="color:#E1E4E8"> { </span><span style="color:#B392F0">calculate</span><span style="color:#F97583">:</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#79B8FF"> number</span><span style="color:#E1E4E8"> }) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> result</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> useMemo</span><span style="color:#E1E4E8">(() </span><span style="color:#F97583">=></span><span style="color:#B392F0"> calculate</span><span style="color:#E1E4E8">(), [calculate]);</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> &#x3C;</span><span style="color:#B392F0">div</span><span style="color:#E1E4E8">>Calculated Result: {result}</span><span style="color:#F97583">&#x3C;/</span><span style="color:#E1E4E8">div</span><span style="color:#F97583">></span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> ParentComponent</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> calculate</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> useCallback</span><span style="color:#E1E4E8">(() </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#B392F0"> heavyComputation</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">  }, []);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> &#x3C;</span><span style="color:#B392F0">ExpensiveComponent</span><span style="color:#B392F0"> calculate</span><span style="color:#E1E4E8">={</span><span style="color:#FFAB70">calculate</span><span style="color:#E1E4E8">} />;</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span></code></pre>
+<p><strong>Key Benefits</strong></p>
+<ul>
+<li><strong>Efficiency</strong>: Reduces resource usage and enhances responsiveness.</li>
+<li><strong>Scalability</strong>: Handles larger datasets and more complex UIs.</li>
+<li><strong>User Experience</strong>: Ensures smoother interactions.</li>
+</ul>
+<h3 id="ways-to-improve-seo">Ways to Improve SEO</h3>
+<p><strong>Problem Statement</strong><br>
+Single Page Applications (SPAs) face SEO challenges as most content is rendered dynamically via JavaScript, which search engines struggle to index effectively.</p>
+<p><strong>Solution</strong></p>
+<ul>
+<li>Use server-side rendering (SSR) frameworks like Next.js to deliver pre-rendered HTML to search engines.</li>
+<li>Optimize metadata with tools like <code>react-helmet</code>.</li>
+<li>Implement structured data for rich results in search engines.</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { Helmet } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "react-helmet"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> SEOComponent</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#B392F0">Helmet</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#B392F0">title</span><span style="color:#E1E4E8">>My React App</span><span style="color:#F97583">&#x3C;/</span><span style="color:#E1E4E8">title</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#F97583">      &#x3C;</span><span style="color:#E1E4E8">meta name</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"description"</span><span style="color:#E1E4E8"> content</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"This is an example of a React app optimized for SEO."</span><span style="color:#F97583"> /></span></span>
+<span class="line"><span style="color:#F97583">    &#x3C;/</span><span style="color:#E1E4E8">Helmet</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#E1E4E8">  );</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span></code></pre>
+<p><strong>Key Benefits</strong></p>
+<ul>
+<li><strong>Improved Search Rankings</strong>: Enhances visibility on search engines.</li>
+<li><strong>Accessibility</strong>: Increases discoverability for a wider audience.</li>
+<li><strong>Content Indexing</strong>: Ensures search engines can index the application’s content.</li>
+</ul>
+<h3 id="writing-clean-code-in-react">Writing Clean Code in React</h3>
+<p><strong>Problem Statement</strong><br>
+Unorganized or inconsistent code reduces readability, maintainability, and scalability.</p>
+<p><strong>Solution</strong><br>
+Adopt clean coding practices, including:</p>
+<ul>
+<li>Follow the single-responsibility principle (SRP) for components.</li>
+<li>Use descriptive naming for variables and functions.</li>
+<li>Write reusable and modular components.</li>
+<li>Document components and functions for better collaboration.</li>
+</ul>
+<p><strong>Key Benefits</strong></p>
+<ul>
+<li><strong>Maintainability</strong>: Simplifies code updates and debugging.</li>
+<li><strong>Readability</strong>: Makes it easier for new developers to understand.</li>
+<li><strong>Scalability</strong>: Enables effortless extension of features.</li>
+</ul>
+<h3 id="styling-pages">Styling Pages</h3>
+<p><strong>Problem Statement</strong><br>
+React applications require flexible and maintainable styling approaches that align with the component-based architecture.</p>
+<p><strong>Solution</strong><br>
+Use modern styling solutions such as:</p>
+<ul>
+<li><strong>CSS Modules</strong>: Scoped CSS to avoid naming conflicts.</li>
+<li><strong>Styled Components</strong>: Write CSS-in-JS with dynamic styling capabilities.</li>
+<li><strong>Tailwind CSS</strong>: Utility-first framework for rapid development.</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> styled </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "styled-components"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> StyledButton</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> styled.</span><span style="color:#B392F0">button</span><span style="color:#9ECBFF">`</span></span>
+<span class="line"><span style="color:#9ECBFF">  background-color: blue;</span></span>
+<span class="line"><span style="color:#9ECBFF">  color: white;</span></span>
+<span class="line"><span style="color:#9ECBFF">  border: none;</span></span>
+<span class="line"><span style="color:#9ECBFF">  padding: 10px;</span></span>
+<span class="line"><span style="color:#9ECBFF">  border-radius: 5px;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9ECBFF">  &#x26;:hover {</span></span>
+<span class="line"><span style="color:#9ECBFF">    background-color: darkblue;</span></span>
+<span class="line"><span style="color:#9ECBFF">  }</span></span>
+<span class="line"><span style="color:#9ECBFF">`</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> App</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> &#x3C;</span><span style="color:#B392F0">StyledButton</span><span style="color:#E1E4E8">>Click Me</span><span style="color:#F97583">&#x3C;/</span><span style="color:#E1E4E8">StyledButton</span><span style="color:#F97583">></span><span style="color:#E1E4E8">;</span></span></code></pre>
+<p><strong>Key Benefits</strong></p>
+<ul>
+<li><strong>Modularity</strong>: Aligns styles with components.</li>
+<li><strong>Maintainability</strong>: Reduces style conflicts.</li>
+<li><strong>Flexibility</strong>: Supports dynamic and theme-based styling.</li>
+</ul>
+<h3 id="pass-data-in-the-routes">pass data in the routes</h3>
+<p>you can pass data in the routes and get them with the browser api.</p>
+<h3 id="state-management-different-states--global-local-server">state management (different states : global, local, server)</h3>
+<p>local state : use useState or useReducer
+global : useContext or state mangement library like redux
+server state : state in the server, use useState with useEffect or a third library like swr or React Query</p>
+<h3 id="conditional-rendering">conditional rendering</h3>
+<p>[[conditional rendering is conditioning the rendering of UI elements depending on a value]]</p>
+<h3 id="working-with-arrays">working with arrays</h3>
+<p>working with arrays is like javascript, the only thing to be aware off is when rendering elements from array is to make sure each component has it own unique key.</p>
+<h3 id="updating-state-with-usestate">updating state with useState</h3>
+<p>update state with useState is very straight forward however, it may be tricky with array and object. so for object and array they must be destructed first then be updated
+so it always recorded to use the the full syntax that use the current state as an argument.</p> <div class="mt-6 flex flex-wrap gap-2"> <a href="/tags/react-js" target="_self" class="px-3 py-1 text-sm bg-gray-100 dark:bg-gray-800 dark:text-gray-300 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out underline underline-offset-2"> 
+#react-js </a> </div> </article>  </div>  </main> <footer class="animate"> <div class="mx-auto lg:w-7/12 px-5">  <div class="flex justify-between items-center"> <div>
+&copy; 2024 | Brahim Belghiti </div> <button id="back-to-top" class="relative group w-fit flex pl-8 pr-3 py-1.5 flex-nowrap rounded border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="absolute top-1/2 left-2 -translate-y-1/2 size-4 stroke-2 fill-none stroke-current rotate-90"> <line x1="5" y1="12" x2="19" y2="12" class="translate-x-2 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></line> <polyline points="12 5 5 12 12 19" class="translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></polyline> </svg> <div class="text-sm">
+Back to top
+</div> </button> </div>  </div> </footer> </body></html>
