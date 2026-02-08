@@ -5,6 +5,7 @@
 html {
   overflow-y: scroll;
   color-scheme: light;
+  visibility: visible !important;
 }
 
 html.dark {
@@ -17,7 +18,6 @@ body {
 }
 
 body {
-  visibility: visible;
   @apply font-sans antialiased;
   @apply flex flex-col;
   @apply bg-stone-100 dark:bg-stone-900;
