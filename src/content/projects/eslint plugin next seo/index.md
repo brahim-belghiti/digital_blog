@@ -5,7 +5,7 @@ description: 'An open-source ESLint plugin that analyzes metadata exports and
 generateMetadata functions in Next.js App Router, catching SEO errors before they
 ship to production.'
 date: '2026-05-06'
-demoURL: ''
+demoURL: 'https://www.npmjs.com/package/eslint-plugin-next-seo'
 repoURL: 'https://github.com/brahim-belghiti/eslint-plugin-next-seo'
 image: ''
 tags: ['TypeScript']
