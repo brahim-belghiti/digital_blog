@@ -6,6 +6,7 @@ demoURL: 'https://washroc.com/'
 repoURL: ''
 image: '/assets/projects/washroc/index.png'
 tags: ['landing-page', 'Nextjs', 'tailwindcss', 'frontend', 'sass']
+category: 'client'
 ---
 
 

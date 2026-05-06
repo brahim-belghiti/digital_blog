@@ -6,6 +6,7 @@ demoURL: 'https://careerlink.ma/'
 repoURL: ''
 image: '/assets/projects/careerlink/careerlink_homepage.png'
 tags: ['recruitment', 'Next.js', 'TailwindCSS', 'frontend', 'Shadcn UI']
+category: 'client'
 ---
 
 # CareerLink

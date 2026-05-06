@@ -6,6 +6,7 @@ demoURL: 'https://pro.fiamane.com/'
 repoURL: ''
 image: '/assets/projects/fiamane.png'
 tags: ['landing-page', 'React', 'Bootstrap', 'frontend', 'shipping']
+category: 'client'
 ---
 
 # Fiamane Landing Page

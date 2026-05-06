@@ -33,7 +33,8 @@ const projects = defineCollection({
     repoURL: z.string().optional(),
     image: z.string().optional(),
     tags: z.array(z.string().optional()),
-    }),
+    category: z.enum(['client', 'opensource', 'personal']).default('client'),
+  }),
 });
 
 export const collections = { blog, work, projects };

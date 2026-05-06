@@ -6,6 +6,7 @@ demoURL: 'https://my.polycode.net/#/register'
 repoURL: ''
 image: '/assets/projects/polycode/index.png'
 tags: ['Laravel', 'TailwindCSS', 'backend']
+category: 'client'
 ---
 
 # PolyCode

@@ -1,13 +1,13 @@
 ---
-title: 'Keysacn - KeySacan is a multi-tenant real estate SASS'
-description: 'KeySacan is a multi-tenant real estate SaaS platform built with Laravel and React. After establishing the initial UI/UX foundation.'
-date: '2025-11-01'
-demoURL: 'https://site.keysacan.com'
-repoURL: ''
-image: '/assets/projects/keysacan/index.png'
-tags: ['productivity', 'Next.js', 'TailwindCSS', 'frontend']
+title: "Keysacn - KeySacan is a multi-tenant real estate SASS"
+description: "KeySacan is a multi-tenant real estate SaaS platform built with Laravel and React. After establishing the initial UI/UX foundation."
+date: "2025-11-01"
+demoURL: "https://site.keysacan.com"
+repoURL: ""
+image: "/assets/projects/keysacan/index.png"
+tags: ["Next.js", "TailwindCSS", "frontend"]
+category: 'client'
 ---
-
 
 # KeySacan
 
@@ -44,49 +44,49 @@ The result is a visually appealing, high-performing real estate platform that de
 
 ## Tech Stack
 
-| Category | Technology |
-|----------|------------|
-| Framework | Next.js 16 (App Router) |
-| Language | TypeScript 5 |
-| UI Library | React 19 |
-| Styling | TailwindCSS 4 |
-| UI Components | Shadcn |
-| State Management | Zustand |
-| Data Fetching | TanStack React Query |
-| Form Handling | React Hook Form + Zod |
-| Maps | Google Maps API |
-| Animations | Framer Motion |
-| HTTP Client | Axios |
+| Category         | Technology              |
+| ---------------- | ----------------------- |
+| Framework        | Next.js 16 (App Router) |
+| Language         | TypeScript 5            |
+| UI Library       | React 19                |
+| Styling          | TailwindCSS 4           |
+| UI Components    | Shadcn                  |
+| State Management | Zustand                 |
+| Data Fetching    | TanStack React Query    |
+| Form Handling    | React Hook Form + Zod   |
+| Maps             | Google Maps API         |
+| Animations       | Framer Motion           |
+| HTTP Client      | Axios                   |
 
 ## Third-Party Libraries
 
-| Library | Purpose |
-|---------|---------|
-| `zustand` | Lightweight state management with persistence for auth state |
-| `@tanstack/react-query` | Powerful data fetching, caching, and synchronization |
-| `@vis.gl/react-google-maps` | Google Maps integration with clustering and custom markers |
-| `framer-motion` | Smooth animations and page transitions |
-| `react-hook-form` | Performant form handling with minimal re-renders |
-| `zod` | TypeScript-first schema validation |
-| `@radix-ui/*` | Accessible, unstyled UI primitives |
-| `embla-carousel-react` | Lightweight carousel for property galleries |
-| `react-markdown` | Render blog content with GitHub-flavored Markdown |
-| `sonner` | Toast notifications for user feedback |
-| `react-phone-number-input` | International phone input with country codes |
-
+| Library                     | Purpose                                                      |
+| --------------------------- | ------------------------------------------------------------ |
+| `zustand`                   | Lightweight state management with persistence for auth state |
+| `@tanstack/react-query`     | Powerful data fetching, caching, and synchronization         |
+| `@vis.gl/react-google-maps` | Google Maps integration with clustering and custom markers   |
+| `framer-motion`             | Smooth animations and page transitions                       |
+| `react-hook-form`           | Performant form handling with minimal re-renders             |
+| `zod`                       | TypeScript-first schema validation                           |
+| `@radix-ui/*`               | Accessible, unstyled UI primitives                           |
+| `embla-carousel-react`      | Lightweight carousel for property galleries                  |
+| `react-markdown`            | Render blog content with GitHub-flavored Markdown            |
+| `sonner`                    | Toast notifications for user feedback                        |
+| `react-phone-number-input`  | International phone input with country codes                 |
 
 ## 📸 Screenshots
 
-| Homepage | search map with result | 
-|----------|----------------|
-| ![homepage](/assets/projects/keysacan/index.png) | ![search map with result](/assets/projects/keysacan/search_with_result.png) | 
+| Homepage                                         | search map with result                                                      |
+| ------------------------------------------------ | --------------------------------------------------------------------------- |
+| ![homepage](/assets/projects/keysacan/index.png) | ![search map with result](/assets/projects/keysacan/search_with_result.png) |
 
-|residence detail | property detail | proprety detail two | 
-|----------|----------------|------------|
-|![residence detail](/assets/projects/keysacan/residence_details.png) | ![property detail](/assets/projects/keysacan/property_details.png) | ![property detail two](/assets/projects/keysacan/proprety_details_2.png) |
-##### client dashboard 
+| residence detail                                                     | property detail                                                    | proprety detail two                                                      |
+| -------------------------------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| ![residence detail](/assets/projects/keysacan/residence_details.png) | ![property detail](/assets/projects/keysacan/property_details.png) | ![property detail two](/assets/projects/keysacan/proprety_details_2.png) |
+
+##### client dashboard
+
 ![client dashboard](/assets/projects/keysacan/client_dashboard.png)
-
 
 ## 🚀 Explore Keysacan
 

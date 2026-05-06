@@ -6,6 +6,7 @@ demoURL: 'https://platforme.fiamane.com/'
 repoURL: ''
 image: '/assets/projects/platform-fiamane.webp'
 tags: ['shipping', 'Next.js', 'TypeScript', 'frontend', 'platform']
+category: 'client'
 ---
 
 # Fiamane

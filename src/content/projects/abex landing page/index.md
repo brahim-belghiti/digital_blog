@@ -6,6 +6,7 @@ demoURL: 'https://www.abex.ma'
 repoURL: ''
 image: '/assets/projects/abex.webp'
 tags: ['landing-page', 'Next.js', 'TailwindCSS', 'frontend', 'shipping']
+category: 'client'
 ---
 
 # Abex

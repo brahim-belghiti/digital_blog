@@ -6,6 +6,7 @@ demoURL: 'https://mindful-tube.vercel.app/'
 repoURL: 'https://github.com/brahim-belghiti/mindful-tube'
 image: 'https://user-images.githubusercontent.com/91473510/196261828-404631b0-d639-40d4-958f-38f089a33a3d.png'
 tags: ['productivity', 'Next.js', 'TailwindCSS', 'frontend', 'YouTube']
+category: 'personal'
 ---
 
 # Mindful-tube

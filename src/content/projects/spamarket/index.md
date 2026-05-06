@@ -6,6 +6,7 @@ demoURL: 'https://spamarket.ma/'
 repoURL: ''
 image: '/assets/projects/spamarket/product_page_focus.png'
 tags: ['e-commerce', 'Next.js', 'TailwindCSS', 'frontend', 'Shadcn UI']
+category: 'client'
 ---
 
 # SpaMarket
