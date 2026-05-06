@@ -1,12 +1,13 @@
 ---
-title: 'Abex - Shipping Agency Landing Page'
-description: 'Abex is a sleek landing page for a transportation agency, built with Next.js, TailwindCSS, and i18next for global accessibility.'
-date: '2023-05-31'
-demoURL: 'https://www.abex.ma'
-repoURL: ''
-image: '/assets/projects/abex.webp'
-tags: ['landing-page', 'Next.js', 'TailwindCSS', 'frontend', 'shipping']
-category: 'client'
+title: "Abex - Shipping Agency Landing Page"
+description: "Abex is a sleek landing page for a transportation agency, built with Next.js, TailwindCSS, and i18next for global accessibility."
+date: "2023-05-31"
+demoURL: "https://www.abex.ma"
+repoURL: ""
+image: "/assets/projects/abex.webp"
+tags: ['Next.js', 'TailwindCSS']
+category: "client"
+stack: 'frontend'
 ---
 
 # Abex
@@ -54,8 +55,8 @@ The result is a polished, efficient landing page that effectively promotes the a
 
 ## 📸 Screenshot
 
-| Landing Page |
-|--------------|
+| Landing Page                                                         |
+| -------------------------------------------------------------------- |
 | ![Abex Landing Page](/assets/projects/abex.webp "Abex Landing Page") |
 
 ## 🚀 Explore Abex

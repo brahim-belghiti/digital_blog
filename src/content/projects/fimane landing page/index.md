@@ -5,8 +5,9 @@ date: '2023-02-01'
 demoURL: 'https://pro.fiamane.com/'
 repoURL: ''
 image: '/assets/projects/fiamane.png'
-tags: ['landing-page', 'React', 'Bootstrap', 'frontend', 'shipping']
+tags: ['React', 'Bootstrap']
 category: 'client'
+stack: 'frontend'
 ---
 
 # Fiamane Landing Page

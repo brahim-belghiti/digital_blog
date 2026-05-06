@@ -1,15 +1,14 @@
 ---
-title: 'Washroc - Sass Landing Page'
-description: 'WashRoc is a modern, high-performance landing page and marketing website for a Moroccan on-demand car wash service'
-date: '2025-08-01'
-demoURL: 'https://washroc.com/'
-repoURL: ''
-image: '/assets/projects/washroc/index.png'
-tags: ['landing-page', 'Nextjs', 'tailwindcss', 'frontend', 'sass']
-category: 'client'
+title: "Washroc - Sass Landing Page"
+description: "WashRoc is a modern, high-performance landing page and marketing website for a Moroccan on-demand car wash service"
+date: "2025-08-01"
+demoURL: "https://washroc.com/"
+repoURL: ""
+image: "/assets/projects/washroc/index.png"
+tags: ['Next.js', 'TypeScript', 'TailwindCSS']
+category: "client"
+stack: 'frontend'
 ---
-
-
 
 # WashRoc
 
@@ -47,29 +46,29 @@ The result is a visually striking, high-converting landing page that effectively
 
 ## Tech Stack
 
-| Category | Technology |
-|----------|------------|
-| Framework | Next.js 15 (App Router) |
-| Language | TypeScript 5 |
-| UI Library | React 19 |
-| Styling | Tailwind CSS 4 |
-| UI Components | Radix UI |
-| Form Handling | React Hook Form |
-| Validation | Zod |
-| Icons | Lucide React |
-| Animations | TailwindCSS Animate |
+| Category      | Technology              |
+| ------------- | ----------------------- |
+| Framework     | Next.js 15 (App Router) |
+| Language      | TypeScript 5            |
+| UI Library    | React 19                |
+| Styling       | Tailwind CSS 4          |
+| UI Components | Radix UI                |
+| Form Handling | React Hook Form         |
+| Validation    | Zod                     |
+| Icons         | Lucide React            |
+| Animations    | TailwindCSS Animate     |
 
 ## Third-Party Libraries
 
-| Library | Purpose |
-|---------|---------|
-| `@radix-ui/react-*` | Accessible, unstyled UI primitives for select, collapsible, labels, and more |
-| `react-hook-form` | Performant form state management with minimal re-renders |
-| `zod` | TypeScript-first schema validation for forms |
-| `lucide-react` | Modern SVG icon library with 525+ icons |
-| `class-variance-authority` | Component variant management for consistent styling |
-| `tailwind-merge` | Smart Tailwind class merging to prevent conflicts |
-| `clsx` | Conditional className utility |
+| Library                    | Purpose                                                                      |
+| -------------------------- | ---------------------------------------------------------------------------- |
+| `@radix-ui/react-*`        | Accessible, unstyled UI primitives for select, collapsible, labels, and more |
+| `react-hook-form`          | Performant form state management with minimal re-renders                     |
+| `zod`                      | TypeScript-first schema validation for forms                                 |
+| `lucide-react`             | Modern SVG icon library with 525+ icons                                      |
+| `class-variance-authority` | Component variant management for consistent styling                          |
+| `tailwind-merge`           | Smart Tailwind class merging to prevent conflicts                            |
+| `clsx`                     | Conditional className utility                                                |
 
 ## Project Highlights
 
@@ -79,11 +78,10 @@ The result is a visually striking, high-converting landing page that effectively
 - **Localization Ready**: French language implementation with structure prepared for multi-language support.
 - **Analytics Integration**: TikTok Pixel and Facebook domain verification for comprehensive marketing tracking.
 
-
 ## 📸 Screenshot
 
-| Landing Page |
-|--------------|
+| Landing Page                                                                       |
+| ---------------------------------------------------------------------------------- |
 | ![Washroc Landing Page](/assets/projects/washroc/index.png "Washroc Landing Page") |
 
 ## 🚀 Explore Washroc

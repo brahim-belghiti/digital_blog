@@ -1,0 +1,151 @@
+---
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog'))
+  .filter(p => !p.data.draft)
+  .map(p => ({ title: p.data.title, href: `/blog/${p.slug}`, type: 'post' }));
+
+const projects = (await getCollection('projects'))
+  .filter(p => !p.data.draft)
+  .map(p => ({ title: p.data.title, href: `/projects/${p.slug}`, type: 'project' }));
+
+const nav = [
+  { title: 'Home', href: '/', type: 'nav' },
+  { title: 'Blog', href: '/blog', type: 'nav' },
+  { title: 'Projects', href: '/projects', type: 'nav' },
+];
+
+const allItems = [...nav, ...projects, ...posts];
+---
+
+<div
+  id="cmd-backdrop"
+  class="fixed inset-0 z-50 hidden items-start justify-center pt-20 px-4 bg-black/60 backdrop-blur-sm"
+>
+  <div
+    id="cmd-box"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Search"
+    class="w-full max-w-lg rounded-xl bg-white dark:bg-gray-900 shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden"
+  >
+    <div class="flex items-center gap-3 px-4 py-3 border-b border-gray-100 dark:border-gray-800">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+      </svg>
+      <input
+        id="cmd-input"
+        type="text"
+        placeholder="Search projects, posts..."
+        class="flex-1 bg-transparent text-sm text-gray-900 dark:text-white placeholder-gray-400 outline-none"
+        autocomplete="off"
+        spellcheck="false"
+      />
+      <kbd class="hidden sm:flex text-[11px] text-gray-400 border border-gray-200 dark:border-gray-700 rounded px-1.5 py-0.5 font-mono">esc</kbd>
+    </div>
+
+    <ul id="cmd-results" class="max-h-72 overflow-y-auto py-1.5" role="listbox"></ul>
+
+    <div class="flex gap-4 px-4 py-2.5 border-t border-gray-100 dark:border-gray-800 text-[11px] text-gray-400">
+      <span class="flex items-center gap-1">
+        <kbd class="border border-gray-200 dark:border-gray-700 rounded px-1 font-mono">↑↓</kbd> navigate
+      </span>
+      <span class="flex items-center gap-1">
+        <kbd class="border border-gray-200 dark:border-gray-700 rounded px-1 font-mono">↵</kbd> open
+      </span>
+      <span class="flex items-center gap-1">
+        <kbd class="border border-gray-200 dark:border-gray-700 rounded px-1 font-mono">esc</kbd> close
+      </span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .cmd-label[data-type="nav"]     { background: #dbeafe; color: #1d4ed8; }
+  .cmd-label[data-type="project"] { background: #ffedd5; color: #c2410c; }
+  .cmd-label[data-type="post"]    { background: #f3f4f6; color: #4b5563; }
+
+  :global(.dark) .cmd-label[data-type="nav"]     { background: rgba(30,58,138,0.4); color: #93c5fd; }
+  :global(.dark) .cmd-label[data-type="project"] { background: rgba(124,45,18,0.4); color: #fdba74; }
+  :global(.dark) .cmd-label[data-type="post"]    { background: rgba(31,41,55,1);    color: #9ca3af; }
+
+  .cmd-item.is-active { background: #f9fafb; }
+  :global(.dark) .cmd-item.is-active { background: #1f2937; }
+</style>
+
+<script define:vars={{ allItems }}>
+  const backdrop = document.getElementById('cmd-backdrop');
+  const input    = document.getElementById('cmd-input');
+  const results  = document.getElementById('cmd-results');
+
+  let activeIdx = 0;
+  let visible   = [];
+
+  const labels = { nav: 'Page', project: 'Project', post: 'Post' };
+
+  function open() {
+    backdrop.classList.remove('hidden');
+    backdrop.classList.add('flex');
+    input.value = '';
+    render(allItems);
+    requestAnimationFrame(() => input.focus());
+  }
+
+  function close() {
+    backdrop.classList.add('hidden');
+    backdrop.classList.remove('flex');
+  }
+
+  function render(items) {
+    visible   = items;
+    activeIdx = 0;
+    if (items.length === 0) {
+      results.innerHTML = '<li class="px-4 py-8 text-center text-sm text-gray-400">No results</li>';
+      return;
+    }
+    results.innerHTML = items.map((item, i) => `
+      <li role="option">
+        <a
+          href="${item.href}"
+          class="cmd-item flex items-center justify-between gap-3 px-4 py-2.5 transition-colors hover:bg-gray-50 dark:hover:bg-gray-800 ${i === 0 ? 'is-active' : ''}"
+          data-idx="${i}"
+        >
+          <span class="text-sm text-gray-900 dark:text-white truncate">${item.title}</span>
+          <span class="cmd-label text-[11px] px-2 py-0.5 rounded-full shrink-0 font-medium" data-type="${item.type}">${labels[item.type]}</span>
+        </a>
+      </li>
+    `).join('');
+  }
+
+  function setActive(idx) {
+    const els = results.querySelectorAll('.cmd-item');
+    els.forEach(el => el.classList.remove('is-active'));
+    activeIdx = Math.max(0, Math.min(idx, visible.length - 1));
+    const el = els[activeIdx];
+    if (el) {
+      el.classList.add('is-active');
+      el.scrollIntoView({ block: 'nearest' });
+    }
+  }
+
+  input.addEventListener('input', () => {
+    const q = input.value.trim().toLowerCase();
+    render(q ? allItems.filter(i => i.title.toLowerCase().includes(q)) : allItems);
+  });
+
+  document.addEventListener('keydown', e => {
+    if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+      e.preventDefault();
+      backdrop.classList.contains('hidden') ? open() : close();
+      return;
+    }
+    if (backdrop.classList.contains('hidden')) return;
+    if (e.key === 'Escape')    { e.preventDefault(); close(); }
+    if (e.key === 'ArrowDown') { e.preventDefault(); setActive(activeIdx + 1); }
+    if (e.key === 'ArrowUp')   { e.preventDefault(); setActive(activeIdx - 1); }
+    if (e.key === 'Enter' && visible[activeIdx]) window.location.href = visible[activeIdx].href;
+  });
+
+  backdrop.addEventListener('click', e => { if (e.target === backdrop) close(); });
+  document.getElementById('open-search')?.addEventListener('click', open);
+</script>

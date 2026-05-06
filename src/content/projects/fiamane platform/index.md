@@ -5,8 +5,9 @@ date: '2023-07-31'
 demoURL: 'https://platforme.fiamane.com/'
 repoURL: ''
 image: '/assets/projects/platform-fiamane.webp'
-tags: ['shipping', 'Next.js', 'TypeScript', 'frontend', 'platform']
+tags: ['Next.js', 'TypeScript', 'TailwindCSS']
 category: 'client'
+stack: 'frontend'
 ---
 
 # Fiamane

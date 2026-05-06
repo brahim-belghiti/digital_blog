@@ -5,8 +5,9 @@ date: "2025-11-01"
 demoURL: "https://site.keysacan.com"
 repoURL: ""
 image: "/assets/projects/keysacan/index.png"
-tags: ["Next.js", "TailwindCSS", "frontend"]
+tags: ['Next.js', 'TypeScript', 'TailwindCSS', 'Shadcn UI']
 category: 'client'
+stack: 'frontend'
 ---
 
 # KeySacan

@@ -1,24 +1,22 @@
 ---
-title: "Polycode - Driving school learning management system (LMS)"
-description: "PolyCode is a comprehensive French driving school learning management system (LMS) designed to help students prepare for the official French driving license exam (Code de la Route)."
-date: "2025-10-01"
-demoURL: "https://my.polycode.net/#/register"
+title: "Slamystory : e-commerce site dedicated to sacred stories in audio and text"
+description: "Slamystory is an innovative e-commerce platform offering a wide collection of stories from the Prophet, the Prophets, and the Companions, available in audio and text versions."
+date: "2026-02-01"
+demoURL: "https://slamystory.com"
 repoURL: ""
-image: "/assets/projects/polycode/index.png"
-tags: ["Laravel", "React", "TypeScript", "TailwindCSS"]
+image: "/assets/projects/slamystory/index.jpg"
+tags: ["Laravel"]
 category: "client"
 stack: "backend"
 ---
 
-# PolyCode
+# Slamystory
 
-PolyCode is a comprehensive French driving school learning management system (LMS) designed to help students prepare for the official French driving license exam (Code de la Route). As a full-stack developer, I built a robust, scalable platform that combines an intuitive admin dashboard with a powerful REST API, supporting multilingual content delivery across 9 languages.
+Slamystory is an innovative e-commerce platform offering a wide collection of stories from the Prophet, the Prophets, and the Companions, available in audio and text versions.
 
-## Project Overview
+Designed as an educational and spiritual space, the site allows users to purchase and view authentic stories, combining modernity and the transmission of knowledge.
 
-PolyCode offers a complete learning ecosystem for driving theory education, featuring interactive questions, structured lessons, timed mock exams, and practice series. Built with Laravel 12 and React 19, the platform prioritizes performance, security, and maintainability while delivering an engaging learning experience for thousands of users.
-
-## Key Features
+<!-- ## Key Features
 
 - **Interactive Learning**: Comprehensive question bank organized by 10 official categories with support for single/multiple choice answers, images, videos, and multilingual audio.
 - **Mock Exams**: Full 40-question exam simulations with 30-minute timers, category-based scoring, and detailed result breakdowns.
@@ -93,8 +91,5 @@ The system features a well-structured relational database with:
 - **Optimized indexes** for high-performance queries
 - **Foreign key constraints** with cascade deletes for data integrity
 
-## 📸 Screenshots
 
-## 🚀 Explore polycode
-
-Visit the [the website](https://my.polycode.net/#/register) to try polycode
+ -->

@@ -5,8 +5,9 @@ date: '2025-04-20'
 demoURL: 'https://careerlink.ma/'
 repoURL: ''
 image: '/assets/projects/careerlink/careerlink_homepage.png'
-tags: ['recruitment', 'Next.js', 'TailwindCSS', 'frontend', 'Shadcn UI']
+tags: ['Next.js', 'TypeScript', 'TailwindCSS', 'Shadcn UI']
 category: 'client'
+stack: 'frontend'
 ---
 
 # CareerLink

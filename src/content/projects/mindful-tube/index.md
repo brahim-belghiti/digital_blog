@@ -1,12 +1,13 @@
 ---
-title: 'Mindful-tube - Distraction-Free YouTube Client'
-description: 'Mindful-tube is a minimalist web app for focused YouTube viewing, built with Next.js and TailwindCSS to eliminate distractions.'
-date: '2024-12-23'
-demoURL: 'https://mindful-tube.vercel.app/'
-repoURL: 'https://github.com/brahim-belghiti/mindful-tube'
-image: 'https://user-images.githubusercontent.com/91473510/196261828-404631b0-d639-40d4-958f-38f089a33a3d.png'
-tags: ['productivity', 'Next.js', 'TailwindCSS', 'frontend', 'YouTube']
-category: 'personal'
+title: "Mindful-tube - Distraction-Free YouTube Client"
+description: "Mindful-tube is a minimalist web app for focused YouTube viewing, built with Next.js and TailwindCSS to eliminate distractions."
+date: "2024-12-23"
+demoURL: "https://mindful-tube.vercel.app/"
+repoURL: "https://github.com/brahim-belghiti/mindful-tube"
+image: "https://user-images.githubusercontent.com/91473510/196261828-404631b0-d639-40d4-958f-38f089a33a3d.png"
+tags: ['Next.js', 'TailwindCSS', 'React']
+category: "personal"
+stack: 'frontend'
 ---
 
 # Mindful-tube
@@ -50,9 +51,9 @@ The result is a sleek, purpose-driven app that empowers users to stay productive
 
 ## 📸 Screenshots
 
-| Homepage | Alternate View | Video Page | Completion |
-|----------|----------------|------------|------------|
-| ![homepage](https://user-images.githubusercontent.com/91473510/196261828-404631b0-d639-40d4-958f-38f089a33a3d.png 'home page') | ![Mindful-tube Alternate View](https://user-images.githubusercontent.com/91473510/196261941-81003729-c416-4572-89c2-0af2f3f8cfd3.png 'Mindful-tube Alternate View') | ![Mindful-tube Video Page](https://user-images.githubusercontent.com/91473510/175263261-fb279205-dd05-45ac-afc9-1c8ebd68791f.png 'Mindful-tube Video Page') | ![Mindful-tube Completion](https://user-images.githubusercontent.com/91473510/175609692-85806950-fa61-4970-b57a-257588632141.png 'Mindful-tube Completion') |
+| Homepage                                                                                                                       | Alternate View                                                                                                                                                      | Video Page                                                                                                                                                  | Completion                                                                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ![homepage](https://user-images.githubusercontent.com/91473510/196261828-404631b0-d639-40d4-958f-38f089a33a3d.png "home page") | ![Mindful-tube Alternate View](https://user-images.githubusercontent.com/91473510/196261941-81003729-c416-4572-89c2-0af2f3f8cfd3.png "Mindful-tube Alternate View") | ![Mindful-tube Video Page](https://user-images.githubusercontent.com/91473510/175263261-fb279205-dd05-45ac-afc9-1c8ebd68791f.png "Mindful-tube Video Page") | ![Mindful-tube Completion](https://user-images.githubusercontent.com/91473510/175609692-85806950-fa61-4970-b57a-257588632141.png "Mindful-tube Completion") |
 
 ## 🚀 Explore Mindful-tube
 

@@ -25,6 +25,7 @@ const projects = defineCollection({
     image: z.string().optional(),
     tags: z.array(z.string().optional()),
     category: z.enum(['client', 'opensource', 'personal']).default('client'),
+    stack: z.enum(['frontend', 'backend', 'fullstack']).default('frontend'),
   }),
 });
 

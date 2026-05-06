@@ -8,8 +8,9 @@ date: '2026-05-06'
 demoURL: ''
 repoURL: 'https://github.com/brahim-belghiti/eslint-plugin-next-seo'
 image: ''
-tags: ['open-source', 'ESLint', 'Next.js', 'SEO', 'TypeScript','developer-tools']
+tags: ['TypeScript', 'ESLint', 'Next.js']
 category: 'opensource'
+stack: 'frontend'
 
 ---
 

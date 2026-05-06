@@ -5,8 +5,9 @@ date: '2025-02-28'
 demoURL: 'https://spamarket.ma/'
 repoURL: ''
 image: '/assets/projects/spamarket/product_page_focus.png'
-tags: ['e-commerce', 'Next.js', 'TailwindCSS', 'frontend', 'Shadcn UI']
+tags: ['Next.js', 'TypeScript', 'TailwindCSS', 'Shadcn UI']
 category: 'client'
+stack: 'frontend'
 ---
 
 # SpaMarket
