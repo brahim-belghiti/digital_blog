@@ -1,7 +1,6 @@
 ---
 
-title: 'eslint-plugin-next-seo - ESLint plugin that catches SEO mistakes in
-Next.js at build time'
+title: 'eslint-plugin-next-seo'
 description: 'An open-source ESLint plugin that analyzes metadata exports and
 generateMetadata functions in Next.js App Router, catching SEO errors before they
 ship to production.'

@@ -10,7 +10,7 @@ export const SITE: Site = {
 
 export const HOME: Metadata = {
   TITLE: "Home",
-  DESCRIPTION: "Brahim belghiti a web developper from Morocco.",
+  DESCRIPTION: "Brahim Belghiti — Fullstack developer from Morocco specializing in React, Next.js, TypeScript, and Laravel.",
 };
 
 export const BLOG: Metadata = {
