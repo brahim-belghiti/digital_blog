@@ -8,7 +8,7 @@ date: '2026-05-06'
 demoURL: ''
 repoURL: 'https://github.com/brahim-belghiti/eslint-plugin-next-seo'
 image: ''
-tags: ['TypeScript', 'ESLint', 'Next.js']
+tags: ['TypeScript']
 category: 'opensource'
 stack: 'frontend'
 
@@ -52,7 +52,7 @@ in each file:
 | `metadata-base-required-for-relative-og-images` | Relative OG image URLs with                       |
 | no `metadataBase`                               |
 | `no-metadata-in-client-component`               | `metadata` export in a `"use client"` file        |
-|  |
+|                                                 |
 
 **Sitemap rules** — analyze `app/sitemap.ts`:
 
