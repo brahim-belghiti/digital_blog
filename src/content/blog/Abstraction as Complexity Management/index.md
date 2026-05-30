@@ -4,6 +4,7 @@ description: "Abstraction removes unnecessary details so you can focus on what m
 date: "May 30 2026"
 tags: ["abstraction", "architecture", "complexity"]
 url: "abstraction-as-complexity-management"
+featured: true
 ---
 
 Abstraction is the process of removing unnecessary details so you can focus on the essential parts. Dealing with complexity, we are either subtracting things, simplifying things, or generalizing and identifying patterns.

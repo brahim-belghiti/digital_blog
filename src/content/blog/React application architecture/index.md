@@ -4,6 +4,7 @@ description: "react application architecture"
 date: "Dec 19 2024"
 tags: ["react-js"]
 url: "react-application-architecture"
+featured: true
 ---
 
 React is a library not a framework, so React doesn't impose a structure for your application, how many pattern have been established to build maintainable, scale-able React applications
@@ -15,13 +16,13 @@ React is a library not a framework, so React doesn't impose a structure for your
 - **Container Component**: Handles all logic, such as fetching data, state management, and event handlers. It passes data and functions as props to the Presenter component.
 - **Presenter Component**: Focuses on rendering the UI, accepting props from the container.
 
- **Why Use This Pattern?**
+  **Why Use This Pattern?**
 
 - Keeps components lean and focused on a single concern.
 - Simplifies testing as logic and UI are isolated.
 - Promotes reusability, as Presenter components can be reused with different data sources.
 
- **Example Implementation**
+  **Example Implementation**
 
 ```typescript
 // Container Component
@@ -53,19 +54,18 @@ const UserList = ({ users }: { users: User[] }) => (
 const App = () => <UserContainer />;
 ```
 
-
 ### **Hooks**
 
 **Detailed Description**
 
 - Encapsulate logic into custom hooks to make it reusable and separate it from rendering concerns.
 
- **Why Use This Pattern?**
+  **Why Use This Pattern?**
 
 - Makes logic reusable and composable.
 - Keeps components cleaner by extracting non-UI logic.
 
- **Example Implementation**
+  **Example Implementation**
 
 ```typescript
 // the custom hook useFetch
@@ -93,10 +93,10 @@ const App = () => {
 };
 ```
 
-
-
 ### using a clear folder structure
+
 use a folders to separate concerns.
+
 ```
 ├── components
 │   ├── ui
@@ -150,4 +150,5 @@ use a folders to separate concerns.
 ```
 
 ### Using utils and helper functions
-extract logic into helpers functions inside a utils folder, and files inside the folder are pure typescript. to avoid being tied to React paradigm if you don't have to (sometime even custom hooks can be just be extracted to be a pure typescript instead of being a React function.) 
+
+extract logic into helpers functions inside a utils folder, and files inside the folder are pure typescript. to avoid being tied to React paradigm if you don't have to (sometime even custom hooks can be just be extracted to be a pure typescript instead of being a React function.)

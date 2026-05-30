@@ -23,9 +23,8 @@ interface ProjectEntry {
 }
 
 const blog = (await getCollection("blog"))
-  .filter((post) => !post.data.draft)
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE);
+  .filter((post) => !post.data.draft && post.data.featured)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
 const projects = (await getCollection("projects"))
   .filter((project) => !project.data.draft)
@@ -200,7 +199,7 @@ const projects = (await getCollection("projects"))
               Writing
             </p>
             <h2 class="text-xl font-bold text-gray-900 dark:text-white">
-              Latest Posts
+              Featured Posts
             </h2>
           </div>
           <Link

@@ -4,6 +4,7 @@ description: "Frederick Brooks argues that software has two kinds of complexity:
 date: "May 30 2026"
 tags: ["complexity", "software-engineering"]
 url: "essential-vs-accidental-complexity"
+featured: true
 ---
 
 In the essay "No Silver Bullet," Frederick P. Brooks argues that there are two types of complexity in software engineering: essential problems and accidental problems.
