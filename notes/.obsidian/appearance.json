@@ -1,0 +1,10 @@
+{
+  "theme": "moonstone",
+  "accentColor": "#5cf55f",
+  "interfaceFontFamily": "Montserrat",
+  "cssTheme": "",
+  "baseFontSize": 20,
+  "showViewHeader": true,
+  "showRibbon": false,
+  "textFontFamily": "Open Sans,Inter"
+}

@@ -1,20 +1,22 @@
 ---
-import PageLayout from '@layouts/PageLayout.astro';
-import Link from '@components/common/Link.astro';
-import Container from '@components/Container.astro';
+import PageLayout from "@layouts/PageLayout.astro";
+import Link from "@components/common/Link.astro";
+import Container from "@components/Container.astro";
 
 export async function getStaticPaths() {
   const allPosts = Object.values(
-    import.meta.glob('../../content/blog/*/*.md', { eager: true })
+    import.meta.glob("../../content/blog/*/*.md", { eager: true }),
   );
 
   return [
-    { params: { tag: 'react-js' }, props: { posts: allPosts } },
-    { params: { tag: 'javascript' }, props: { posts: allPosts } },
-    { params: { tag: 'typescript' }, props: { posts: allPosts } },
-    { params: { tag: 'express' }, props: { posts: allPosts } },
-    { params: { tag: 'next-js' }, props: { posts: allPosts } },
-
+    { params: { tag: "react-js" }, props: { posts: allPosts } },
+    { params: { tag: "javascript" }, props: { posts: allPosts } },
+    { params: { tag: "typescript" }, props: { posts: allPosts } },
+    { params: { tag: "express" }, props: { posts: allPosts } },
+    { params: { tag: "next-js" }, props: { posts: allPosts } },
+    { params: { tag: "solid" }, props: { posts: allPosts } },
+    { params: { tag: "software-design" }, props: { posts: allPosts } },
+    { params: { tag: "oop" }, props: { posts: allPosts } },
   ];
 }
 
@@ -22,7 +24,7 @@ const { tag } = Astro.params;
 const { posts } = Astro.props;
 
 const filteredPosts = posts.filter((post: any) =>
-  post.frontmatter.tags?.includes(tag)
+  post.frontmatter.tags?.includes(tag),
 );
 ---
 
