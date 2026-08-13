@@ -5,9 +5,9 @@ date: "2025-11-01"
 demoURL: "https://site.keysacan.com"
 repoURL: ""
 image: "/assets/projects/keysacan/index.png"
-tags: ['Next.js', 'TypeScript', 'TailwindCSS', 'Shadcn UI']
-category: 'client'
-stack: 'frontend'
+tags: ["Next.js", "TypeScript", "TailwindCSS", "Shadcn UI"]
+category: "client"
+stack: "frontend"
 ---
 
 # KeySacan
@@ -89,6 +89,6 @@ The result is a visually appealing, high-performing real estate platform that de
 
 ![client dashboard](/assets/projects/keysacan/client_dashboard.png)
 
-## 🚀 Explore Keysacan
+<!-- ## 🚀 Explore Keysacan
 
-Visit the [the website](https://site.keysacan.com/fr) to try keysacan
+Visit the [the website](https://site.keysacan.com/fr) to try keysacan -->
