@@ -1,8 +1,8 @@
 ---
-title: "Keysacn - KeySacan is a multi-tenant real estate SASS"
-description: "KeySacan is a multi-tenant real estate SaaS platform built with Laravel and React. After establishing the initial UI/UX foundation."
+title: " is a multi-tenant real estate SASS"
+description: "a multi-tenant real estate SaaS platform built with Laravel and React. After establishing the initial UI/UX foundation."
 date: "2025-11-01"
-demoURL: "https://site.keysacan.com"
+demoURL: ""
 repoURL: ""
 image: "/assets/projects/keysacan/index.png"
 tags: ["Next.js", "TypeScript", "TailwindCSS", "Shadcn UI"]
@@ -10,13 +10,13 @@ category: "client"
 stack: "frontend"
 ---
 
-# KeySacan
+#
 
-KeySacan is a modern and performant real estate marketplace designed to simplify property discovery worldwide. As the frontend developer, I built a responsive, intuitive platform that combines interactive maps with seamless property browsing, leveraging cutting-edge web technologies to ensure speed, scalability, and an exceptional user experience.
+is a modern and performant real estate marketplace designed to simplify property discovery worldwide. As the frontend developer, I built a responsive, intuitive platform that combines interactive maps with seamless property browsing, leveraging cutting-edge web technologies to ensure speed, scalability, and an exceptional user experience.
 
 ## Project Overview
 
-KeySacan enables users to discover, list, and manage properties for buying or renting across the world. With its tagline **"Scan. Connect. Simplify"**, the platform offers intuitive property search, interactive map exploration, and secure user authentication. Built with Next.js 16 and React 19, the platform prioritizes performance and maintainability while delivering a polished, modern interface.
+The platform enables users to discover, list, and manage properties for buying or renting across the world. With its tagline **"Scan. Connect. Simplify"**, the platform offers intuitive property search, interactive map exploration, and secure user authentication. Built with Next.js 16 and React 19, the platform prioritizes performance and maintainability while delivering a polished, modern interface.
 
 ## Key Features
 
