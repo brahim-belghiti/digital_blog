@@ -1,5 +1,5 @@
 ---
-title: " is a multi-tenant real estate SASS"
+title: " A multi-tenant real estate SASS"
 description: "a multi-tenant real estate SaaS platform built with Laravel and React. After establishing the initial UI/UX foundation."
 date: "2025-11-01"
 demoURL: ""
